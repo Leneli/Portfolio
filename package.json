@@ -1,7 +1,7 @@
 {
-  "name": "loftschool-builder",
+  "name": "portfolio-forest",
   "version": "1.0.0",
-  "author": "a.kalin",
+  "author": "e.kuklina",
   "license": "ISC",
   "scripts": {},
   "devDependencies": {
@@ -28,5 +28,7 @@
   },
   "dependencies": {
     "normalize.css": "~5.0.0"
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/Leneli/Gulp-builder.git"
 }
