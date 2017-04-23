@@ -1,0 +1,29 @@
+//.quote {}
+
+.quote__text {
+	@include font("Roboto-LightItalic");
+}
+
+.quote__author {
+	@include font("Roboto-BoldItalic");
+
+	&::before {
+		content: "— ";
+	}
+}
+
+.quote__accent {
+	color: $color-accents;
+	@include font("Roboto-BoldItalic");
+}
+
+
+//
+.quote_center {
+	@include flex-to(center);
+	flex-direction: column;
+}
+
+.quote_footer {
+	opacity: .5;
+}

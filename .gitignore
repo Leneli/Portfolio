@@ -22,6 +22,7 @@
 .project
 .settings
 .tmproj
+.eslintrc
 Thumbs.db
 
 # Folders to ignore
@@ -33,6 +34,7 @@ Thumbs.db
 bower_components
 dist
 build
+psd
 
 # Node.JS
 node_modules

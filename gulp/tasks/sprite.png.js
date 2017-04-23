@@ -11,7 +11,7 @@ module.exports = function() {
                 algorithm: 'top-down',
                 padding: 3,
                 cssName: 'sprite-png.scss',
-                cssFormat: 'scss',
+                cssFormat: 'css',
                 cssVarMap: function (sprite) {
                     sprite.name = 'sprite__' + sprite.name;
                 }

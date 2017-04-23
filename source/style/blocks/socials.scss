@@ -1,0 +1,23 @@
+.socials {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.socials__item {
+	display: inline-block;
+	width: 31px;
+	height: 22px;
+
+	&:not(:last-child) {margin-right: 30px;}
+}
+
+.socials__link {
+	display: block;
+	height: 100%;
+}
+
+.socials_topm {
+	margin-top: 35px;
+}

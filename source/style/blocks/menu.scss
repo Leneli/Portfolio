@@ -1,0 +1,36 @@
+.menu {
+	flex-wrap: wrap;
+}
+
+//
+.menu__item {
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+//
+.menu_horizontal {
+	@include flex-to(between);
+}
+
+.menu_vertical {
+	@include flex-to(center);
+	flex-direction: column;
+}
+
+.menu_white {
+	@include font("Roboto-Medium");
+
+	.menu__item {
+		color: $color-white;
+	}
+}
+
+.menu_footer {
+	@extend .menu_horizontal;
+	@extend .menu_white;
+	margin-bottom: 25px;
+}

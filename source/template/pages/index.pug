@@ -1,7 +1,25 @@
-extends ../_template
+extends ../_forest
 
 block variables
-  - var title = 'Home page'
+	- var title = 'Welcome'
+	-
+		var navigation = [
+			{
+				name: 'Мои работы',
+				href: '/works.html'
+			}, {
+				name: 'Обо мне',
+				href: '/about.html'
+			}, {
+				name: 'Блог',
+				href: '/blog.html'
+			}
+		]
 
+	
 block content
-  include ../common/_greating
+	.form__content
+		include ../blocks/user-head
+		.socials_topm 
+			+socials(links, "svg_white-green-opacity")
+	+menu(navigation, "form__btn", "form__buttons")

@@ -1,0 +1,54 @@
+extends ../_page
+
+block variables
+	- var title = "Works"
+	- var bottomBg = "bg_forest-bottom"
+	- var leftTraingleClass = "traingle_works"
+	- var rightTraingleClass = "traingle_works"
+
+
+
+block content
+	section.section_works
+		h1.h1_underline.text-center Мои работы
+
+		.slider.columns_two
+			.s1
+				h2.h2_underline Сайт школы онлайн Образования
+			.s2 Slider
+
+
+	section.section
+		h1.h1_underline.text-center Что обо мне говорят
+
+		.opinions.columns_two
+			.opinions__item
+				.quote_center
+					img(src="/assets/img/content/9.png" alt="")
+					p.quote__text Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
+					div
+						p.quote__accent Сабанцев Владимир
+						p.quote__author преподаватель
+
+			.opinions__item
+				.quote_center
+					img(src="/assets/img/content/9.png" alt="")
+					p.quote__text Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
+					div
+						p.quote__accent Сабанцев Владимир
+						p.quote__author преподаватель
+
+		.section_center
+			.form.form_light
+				.form__content
+					h2.h2_underline Связаться со мной
+					form
+						div
+							input.form__input
+						div
+							input.form__input
+						div
+							textarea.form__input
+				.form__buttons
+					a.form__btn Отправить
+					a.form__btn Очистить

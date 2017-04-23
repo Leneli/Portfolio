@@ -1,0 +1,29 @@
+extends ../_forest
+
+block variables
+	- var title = 'Login'
+
+
+
+block main-menu
+
+block content
+	.form__content
+		span.subtitle.h2 Авторизуйтесь
+		form.login-form
+			input(type="text" value="login").form__input
+			input(type="password" value="password").form__input
+			label
+				input(type="checkbox")
+				| Я человек
+			p Вы точно не робот?
+			label
+				input(type="radio" name="iman")
+				| Да
+			label
+				input(type="radio" name="iman")
+				| Не уверен
+
+	.form__buttons
+		a(class="form__btn" href="/") На главную
+		a.form__btn Войти 

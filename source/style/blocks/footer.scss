@@ -1,0 +1,35 @@
+//var
+$height-copy: 38px;
+$height-forest: 60px;
+
+//element
+.footer {
+	position: relative;
+	min-height: $height-forest;
+	@include font("Roboto-Light");
+	color: $color-white;
+}
+
+//blocks
+.footer__main {
+	display: flex;
+	height: $height-footer - $height-copy;
+	background: rgba($color-font-head, 0.85);
+}
+
+.footer__col {
+	flex-basis: 33.33%;
+	padding: 30px 30px 0 30px;
+	&:not(:last-child) {
+		border-right: 1px solid rgba($color-white, .2);
+	}
+}
+
+.footer__copyright {
+	height: $height-copy;
+	line-height: $height-copy;
+	background: rgba($color-buttons, 0.85);
+	text-align: center;
+}
+
+//modifiers

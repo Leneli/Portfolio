@@ -1,7 +1,7 @@
 (function() {
-  'use strict';
+	"use strict";
 
-  setTimeout(function() {
-    document.querySelector('.greating_picture').classList.add('m--show');
-  }, 1000);
+
+	svg4everybody(); //for SVG-elements in IE
+	console.log("hello APP!");
 })();

@@ -1,0 +1,53 @@
+//var
+$width: 380px;
+$btn-height: 45px;
+$rad: 5px;
+$padd: 20px;
+//
+.form {
+	@include flex-to(between-col);
+	width: $width;
+	border-radius: $rad;
+	overflow: hidden;
+}
+
+//
+.form__content {
+	@include flex-to(center);
+	flex-direction: column;
+	padding: ($padd * 2) $padd $padd $padd;
+}
+
+.form__buttons {
+	@include flex-to(between);
+	height: $btn-height;
+	line-height: $btn-height;
+	background: $color-buttons;
+}
+
+.form__btn {
+	flex-grow: 1;
+	color: $color-white;
+	@include font("Roboto-Medium");
+	text-align: center;
+	text-decoration: none;
+	cursor: pointer;
+
+	&:not(:last-child) {border-right: 2px solid rgba($color-white, .5);}
+
+	&:hover {background: $color-accents;}
+}
+
+.form__input {
+	width: 100%;
+}
+
+//
+.form_dark {
+	background: rgba($color-windows, .6);
+	color: $color-white;
+}
+
+.form_light {
+	background: rgba($color-bg5, .6);
+}

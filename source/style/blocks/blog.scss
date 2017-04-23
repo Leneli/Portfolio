@@ -1,0 +1,15 @@
+.blog {
+	display: flex;
+	margin-top: 70px;
+	background: $color-bg3;
+}
+
+.blog_centerd {
+	@include flex-to(center);
+	flex-direction: column;
+}
+
+//////
+.h1_blog {
+	margin-top: 35px;
+}

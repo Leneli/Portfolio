@@ -1,0 +1,36 @@
+//- default variables
+include ./helpers/_default-vars
+
+//- variables on the page
+block variables
+
+//-include mixins
+include ./helpers/userpic
+include ./helpers/svg-icon
+include ./blocks/meta
+include ./blocks/socials
+include ./blocks/menu
+
+
+//- template
+
+doctype html
+html(lang="ru-RU")
+	head
+		title #{title}
+		+meta(metaData)
+
+	body
+		.wrapper.bg_forest-full
+			.content.blog_centerd
+
+				block main-menu
+					header
+						a(href="/login.html" class="authorize authorize_top") Авторизоваться
+
+				main
+					.form.form_dark
+						block content
+
+			footer.footer
+				p.text-center © Елена Куклина | Создано с любовью в LoftSchool | 2017

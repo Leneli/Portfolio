@@ -1,0 +1,17 @@
+.authorize {
+	display: block;
+	position: absolute;
+	padding: 15px 30px;
+	@include font("Roboto-Medium");
+	color: $color-white;
+	text-decoration: none;
+	border: 1px solid;
+	border-radius: 30px;
+
+	&:hover {background: rgba($color-white, .2);}
+}
+
+.authorize_top {
+	top: 25px;
+	right: 100px;
+}

@@ -1,5 +1,34 @@
-body {
-  margin: 0;
-}
+//VARIABLES
+//colors
+$color-bg1: #f8f9f5;
+$color-bg2: #f4f5f0;
+$color-bg3: #faf8f0;
+$color-bg4: #f0efe9;
+$color-bg5: #ebefe2;
+$color-bg6: #e1e4d7;
+$color-buttons: #6c9c5a;
+$color-accents: #4e8839;
+$color-warning: #e44845;
+$color-windows: #122620;
+$color-substrt: #93c42e;
+$color-font-main: #566358;
+$color-font-blog: #455a64;
+$color-font-head: #373e42;
+$color-font-link: #6da3bd;
+$color-white: #fff;
+$color-black: #000;
 
-@import 'common/greating';
+//sizes
+$size-font-main: 16px;
+$size-font-head: 63px;
+$size-font-subh: 35px;
+
+$height-footer: 185px;
+
+
+//IMPORT
+@import "layout/mixins";
+@import "layout/fonts";
+@import "layout/setups";
+@import "helpers/**/*";
+@import "blocks/**/*";

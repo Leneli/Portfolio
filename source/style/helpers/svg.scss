@@ -1,0 +1,27 @@
+//fill
+.svg_white {
+	fill: $color-white;
+}
+
+.svg_white-green {
+	fill: $color-white;
+
+	&:hover {fill: $color-buttons;}
+}
+
+.svg_white-opacity {
+	fill: $color-white;
+	opacity: .5;
+
+	&:hover {opacity: 1;}
+}
+
+.svg_white-green-opacity {
+	fill: $color-white;
+	opacity: .5;
+
+	&:hover {
+		fill: $color-buttons;
+		opacity: 1;
+	}
+}

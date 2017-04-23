@@ -1,0 +1,40 @@
+$padding-inner: 20px;
+$padding-exter: 70px;
+$line-width: 681px;
+$line-height: 5px;
+
+
+.article {
+	max-width: 880px;
+	margin-bottom: $padding-exter;
+	color: $color-font-blog;
+
+	&:not(:last-child) {
+		&::after {
+			content: "";
+			display: block;
+			width: $line-width;
+			height: $line-height;
+			margin-top: $padding-exter;
+			background: rgba($color-font-head, .07);
+		}
+	}
+}
+
+.article__name {
+	@extend %head2;
+	margin-bottom: $padding-inner;
+}
+
+.article__date {
+	color: $color-accents;
+	opacity: .7;
+}
+
+.article__text {
+	margin-top: $padding-inner;
+
+	& > p {
+		padding: 5px 0;
+	}
+}

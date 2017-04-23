@@ -1,0 +1,53 @@
+//text
+.text-center {text-align: center;}
+.text-right  {text-align: right;}
+.text-left   {text-align: left;}
+.text-accent {
+	color: $color-accents;
+	@include font("Roboto-Medium");
+}
+.text-bold {font-weight: bold;}
+.text-italic {font-style: italic;}
+.text-bolditalic {
+	font-weight: bold;
+	font-style: italic;
+}
+
+.h1 {
+	@extend %head1;
+	padding-bottom: 70px;
+}
+
+.h1_underline {
+	@extend .h1;
+	@extend %head-underline;
+}
+
+.h2 {
+	@extend %head2;
+}
+
+.h2_underline {
+	@extend .h2;
+	@extend %head-underline;
+}
+
+
+//images
+.img_circle {
+	border-radius: 50%;
+	width: 141px;
+	height: 141px;
+}
+
+
+//links
+.link,
+.link:link,
+.link:visited {
+	color: $color-font-link;
+	text-decoration: underline;
+	@include font("Roboto-Medium");
+}
+.link:hover,
+.link:focus {text-decoration: none;}

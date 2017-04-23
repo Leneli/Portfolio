@@ -1,0 +1,27 @@
+//blocks
+.header {
+	@include flex-to(between-col);
+	position: relative;
+	color: $color-white;
+}
+
+//elements
+.header__nav {
+	@include flex-to(between);
+	margin: 30px;
+}
+
+.header__content {
+	@include flex-to(center);
+	flex-direction: column;
+	position: relative;
+}
+
+//
+.header__content_about {
+	margin: 45px 30px 130px 30px;
+}
+
+.header__content_blog {
+	margin-top: 80px;
+}

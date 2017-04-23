@@ -1,0 +1,21 @@
+.articles-nav {
+	flex-basis: 505px;
+	padding-right: 116px;
+}
+
+.articles-nav__link {
+	display: block;
+	padding: 15px 17px 15px 0;
+	color: $color-font-blog;
+	text-decoration: none;text-align: right;
+	border-right: 3px solid $color-bg3;
+	&:hover {
+		@extend .articles-nav__link_actove;
+	}
+}
+
+.articles-nav__link_actove {
+	@include font("Roboto-Bold");
+	color: $color-accents;
+	border-color: $color-accents;
+}

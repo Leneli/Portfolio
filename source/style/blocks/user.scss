@@ -1,0 +1,17 @@
+//blocks
+.user {
+	@include flex-to(center);
+	flex-direction: column;
+	color: inherit;
+}
+
+//elements
+.user__name {
+	@include font("Roboto-Medium");
+	margin: 20px 0 10px 0;
+	font-size: $size-font-subh;
+}
+
+.user__desc {
+	opacity: .8;
+}

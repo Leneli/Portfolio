@@ -1,0 +1,6 @@
+mixin article(artName, artDate)
+	section.article
+		h2.article__name #{artName}
+		time.article__date #{artDate}
+		.article__text
+			block text

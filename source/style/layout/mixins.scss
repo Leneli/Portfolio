@@ -1,0 +1,53 @@
+//add font
+@mixin font($family) {
+	font-family: $family;
+}
+
+
+//flex
+@mixin flex-to($param) {
+	@if $param == "center" {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	@if $param == "between" {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	@if $param == "between-col" {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+}
+
+
+//text
+%head1 {
+	@include font("Sansus-Webissimo-Regular");
+	text-transform: uppercase;
+	font-size: 63px;
+	line-height: 63px;
+}
+
+%head2 {
+	@include font("Sansus-Webissimo-Regular");
+	font-size: 35px;
+	line-height: 35px;
+}
+
+%head-underline {
+	&::after {
+		content: "";
+		display: block;
+		//position: absolute;
+		width: 89px;
+		height: 0;
+		//bottom: 15px;
+		transform: translate(50%, 50%);
+		border-bottom: 3px solid;
+	}
+}

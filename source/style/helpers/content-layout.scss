@@ -1,0 +1,12 @@
+.columns_two {
+	display: flex;
+
+	& > * {border: 3px solid yellowgreen;
+		flex-basis: 50%;
+	}
+}
+
+.section_center {
+	@include flex-to(center);
+	margin: 70px 0 160px 0;
+}

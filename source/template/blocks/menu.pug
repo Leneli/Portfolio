@@ -1,0 +1,4 @@
+mixin menu(navigation, itemClassName, navClassName)
+	nav(class=`menu ${navClassName}`)
+		each i in navigation
+			a(class=`${itemClassName}` href=`${i.href}`) #{i.name}
