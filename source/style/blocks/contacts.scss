@@ -1,0 +1,28 @@
+.contacts {
+	
+	width: 380px;
+	height: 312px;
+	padding: 36px 40px;
+	background: rgba($color-bg2, .85);
+	color: $color-font-blog;
+	border-radius: 5px;
+}
+
+.contacts__icon {
+	@extend .svg_green;
+	height: 24px;
+	width: 24px;
+	margin-right: 10px;
+}
+
+.contacts__ul {
+	margin-top: 50px;
+}
+
+.contacts__li {
+	margin: 13px 0;
+}
+
+.contacts__str {
+	vertical-align: top;
+}
