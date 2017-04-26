@@ -9,5 +9,42 @@
     {
       "WorkFlow" : [7, 8, 9, 10, 11]
     }
-  ]
+  ],
+
+  "socials" : [
+    {
+			"name": "vk",
+			"href": "https://vk.com/id48174114"
+		}, {
+			"name": "github",
+			"href": "https://github.com/Leneli"
+		}, {
+			"name": "in",
+			"href": "https://www.linkedin.com/in/elena-lehmann-9310aa112/"
+		}
+  ],
+
+  "menu" : [
+    {
+			"name": "Мои работы",
+			"href": "/works.html"
+		}, {
+			"name": "Обо мне",
+			"href": "/about.html"
+		}, {
+			"name": "Блог",
+			"href": "/blog.html"
+		}, {
+			"name": "Авторизация",
+			"href": "/login.html"
+		}
+  ],
+
+  "metaData" : [{
+    "auth": "Elena",
+		"desc": "Портфолио веб-разработчика",
+		"keyw": "frontend, web, фронтенд, веб-разработка"
+  }]
+
+
 }
