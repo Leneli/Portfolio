@@ -20,7 +20,7 @@
 
 .h1_underline {
 	@extend .h1;
-	@extend %head-underline;
+	@include head-underline(40px);
 }
 
 .h2 {
@@ -29,7 +29,7 @@
 
 .h2_underline {
 	@extend .h2;
-	@extend %head-underline;
+	@include head-underline(0);
 }
 
 

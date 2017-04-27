@@ -20,7 +20,7 @@
 	color: $color-white;
 	text-decoration: none;
 	&:hover {
-		@extend %head-underline;
+		@include head-underline(10px);
 	}
 	
 }

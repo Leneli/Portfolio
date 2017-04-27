@@ -39,7 +39,7 @@
 	line-height: 35px;
 }
 
-%head-underline {
+@mixin head-underline($bottom) {
 	position: relative;
 	&::after {
 		content: "";
@@ -47,7 +47,7 @@
 		position: absolute;
 		width: 89px;
 		height: 0;
-		bottom: 35px;
+		bottom: $bottom;
 		left: calc(50% - 45px);
 		//transform: translate(50%, 50%);
 		border-bottom: 3px solid;
