@@ -1,0 +1,22 @@
+mixin button(className)
+	.slider__btn_top
+		div(class=`slider_arrow ${className}`)
+			+svgIcon("arrow_down", "svg_white", "0 0 25.18 16.164")
+
+
+//- Slider
+.slider
+
+	.slider__picture
+		| Картинка со скриншотами работы
+
+	.slider__desc
+		| Короткое описание и ссылка на работу
+
+	.slider__nav
+		.slider__btn
+			img(src="/assets/img/content/test.jpg" alt="test")
+			+button("")
+		.slider__btn
+			img(src="/assets/img/content/test.jpg" alt="test")
+			+button("arrow_up")

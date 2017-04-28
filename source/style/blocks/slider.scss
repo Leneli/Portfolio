@@ -1,0 +1,65 @@
+$slider-height: 300px;
+$nav-height: 50px;
+
+//slider blocks
+.slider {
+	@include flex-to("between");
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	height: $slider-height;
+}
+
+.slider__picture {
+	@include flex-to(center);
+	background: $color-bg6;
+	flex-basis: 50%;
+	height: 100%;
+
+	padding-bottom: $nav-height;
+}
+
+.slider__desc {
+	@include flex-to(center);
+	background: $color-buttons;
+	flex-basis: 50%;
+	height: 100%;
+	
+	order: -1;
+}
+
+.slider__nav {
+	@include flex-to(between);
+	flex-basis: 50%;
+	height: $nav-height;
+	margin-top: -$nav-height;
+	background: $color-substrt;
+}
+
+//slider navigation
+.slider__btn {
+	@include flex-to(center);
+	flex: 1;
+	position: relative;
+
+	& img {
+		height: 100%;
+	}
+}
+
+//layout with arrow
+.slider__btn_top {
+	@include flex-to(center);
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+
+	background: rgba(red, .3);
+
+	&:hover {background: rgba(red, .5);}
+}
+
+.slider_arrow {
+	width: 26px;
+	height: 16px;
+}
