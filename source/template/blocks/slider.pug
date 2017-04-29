@@ -1,6 +1,6 @@
-mixin button(className)
-	.slider__btn_top
-		div(class=`slider_arrow ${className}`)
+mixin button(arowDirection, btnClass)
+	div(class=`slider__btn_top ${btnClass}`)
+		div(class=`slider_arrow ${arowDirection}`)
 			+svgIcon("arrow_down", "svg_white", "0 0 25.18 16.164")
 
 
@@ -8,15 +8,17 @@ mixin button(className)
 .slider
 
 	.slider__picture
-		| Картинка со скриншотами работы
+		img(src="/assets/img/works/work-2.png" alt="test")
 
 	.slider__desc
-		| Короткое описание и ссылка на работу
+		h2.work__title Сайт школы онлайн образования
+		span.work__tech HTML, CSS, JavaScript
+		a(href="#").work__link Просмотреть сайт
 
 	.slider__nav
 		.slider__btn
-			img(src="/assets/img/content/test.jpg" alt="test")
-			+button("")
+			img(src="/assets/img/works/work-1.png" alt="test")
+			+button("", "prew")
 		.slider__btn
-			img(src="/assets/img/content/test.jpg" alt="test")
-			+button("arrow_up")
+			img(src="/assets/img/works/work-3.png" alt="test")
+			+button("arrow_up", "next")
