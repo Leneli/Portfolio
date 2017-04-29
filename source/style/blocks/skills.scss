@@ -26,6 +26,13 @@ $stroke-width: 20px;
     text-align: center;
 }
 
+.skills__group-name {
+    margin-top: 20px;
+    @include font("Roboto-Medium");
+    font-size: 28px;
+}
+
+
 //circles
 .circles {
     fill: none;

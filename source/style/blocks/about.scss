@@ -1,0 +1,36 @@
+.about {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+
+.about__item {
+	flex: 1 1 400px;
+
+	padding: 0 20px 0 40px;
+}
+
+
+.about__item_up {
+	height: 170px;
+	margin-top: -61px;
+}
+
+.about__item_l {
+	@extend .about__item;
+	display: flex;
+	flex-wrap: wrap;
+	align-content: flex-start;
+	& > * {
+		flex: 1 1 400px;
+		
+		display: flex;
+		width: 445px;
+		flex-direction: column;
+		align-items: center;
+	}
+}
+
+.about__item_r {
+	@extend .about__item;
+}
