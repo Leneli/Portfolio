@@ -13,23 +13,20 @@
 	font-style: italic;
 }
 
-.h1 {
+//titles
+.title {
 	@extend %head1;
-	padding-bottom: 70px;
+	margin: auto;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: contain;
 }
 
-.h1_underline {
-	@extend .h1;
-	@include head-underline(40px);
-}
-
-.h2 {
+.subtitle {
 	@extend %head2;
-}
-
-.h2_underline {
-	@extend .h2;
-	@include head-underline(0);
+	padding-bottom: 29px;
+	text-transform: uppercase;
+	@include head-underline();
 }
 
 

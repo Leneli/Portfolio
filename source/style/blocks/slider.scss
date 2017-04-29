@@ -86,11 +86,6 @@ $nav-height: 225px;
 
 //for block "slider__desc"
 .work__title {
-	@extend %head2;
-	padding-bottom: 30px;
-	@include head-underline(0);
-	text-align: center;
-
 	width: 320px;
 }
 

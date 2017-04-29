@@ -31,15 +31,17 @@
 	text-transform: uppercase;
 	font-size: 63px;
 	line-height: 63px;
+	text-align: center;
 }
 
 %head2 {
 	@include font("Sansus-Webissimo-Regular");
 	font-size: 35px;
 	line-height: 35px;
+	text-align: center;
 }
 
-@mixin head-underline($bottom) {
+@mixin head-underline($bottom: 0) {
 	position: relative;
 	&::after {
 		content: "";
@@ -49,7 +51,6 @@
 		height: 0;
 		bottom: $bottom;
 		left: calc(50% - 45px);
-		//transform: translate(50%, 50%);
 		border-bottom: 3px solid;
 	}
 }

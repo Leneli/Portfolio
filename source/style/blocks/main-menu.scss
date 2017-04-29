@@ -14,13 +14,11 @@
 }
 
 .main-menu__item {
-	//position: relative;
 	@extend %head1;
 	padding: 45px 0;
 	color: $color-white;
 	text-decoration: none;
 	&:hover {
-		@include head-underline(10px);
+		@include head-underline(20px);
 	}
-	
 }
