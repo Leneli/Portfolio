@@ -1,10 +1,16 @@
 .main-menu {
-	display: none;
+	//display: none;
 	position: fixed;
 	width: 100vw;
 	min-height: 100vh;
 	background: rgba($color-buttons, .87);
 	z-index: 100;
+	transition: all 1s ease;
+	transform: translateY(-100%);
+
+	&:target {
+		transform: translateY(0);
+	}
 }
 
 .main-menu__body {

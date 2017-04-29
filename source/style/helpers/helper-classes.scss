@@ -13,22 +13,6 @@
 	font-style: italic;
 }
 
-//titles
-.title {
-	@extend %head1;
-	margin: auto;
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-size: contain;
-}
-
-.subtitle {
-	@extend %head2;
-	padding-bottom: 29px;
-	text-transform: uppercase;
-	@include head-underline();
-}
-
 
 //images
 .img_circle {

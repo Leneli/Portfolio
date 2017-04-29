@@ -1,15 +1,33 @@
+//common titles
+.title {
+	@extend %head1;
+	margin: auto;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.subtitle {
+	@extend %head2;
+	padding-bottom: 29px;
+	text-transform: uppercase;
+	@include head-underline();
+}
+
+
+//styles for specific blocks
 .title_works {
 	@extend .title;
 	@include head-underline(18px);
 	padding: 73px 96px 48px 76px;
-	background-image: url(/assets/img/decor/works-header.png);
+	background-image: url("/assets/img/decor/works-header.png");
 }
 
 .title_speak {
 	@extend .title;
 	@include head-underline();
 	padding: 45px 88px 40px 78px;
-	background-image: url(/assets/img/decor/about-header.png);
+	background-image: url("/assets/img/decor/about-header.png");
 	width: 510px;
 }
 
@@ -17,7 +35,7 @@
 	@extend .title;
 	@include head-underline();
 	padding: 55px 60px 30px 65px;
-	background-image: url(/assets/img/decor/about-header.png);
+	background-image: url("/assets/img/decor/about-header.png");
 }
 
 .title_blog  {
@@ -25,5 +43,5 @@
 	@include head-underline(67px);
 	margin-top: -32px;
 	padding: 64px 86px 100px 86px;
-	background-image: url(/assets/img/decor/blog-header.png);
+	background-image: url("/assets/img/decor/blog-header.png");
 }

@@ -1,4 +1,25 @@
-//.quote {}
+.quotes {
+	@include flex-to(center);
+	width: 750px;
+	margin: 30px auto 0;
+	//margin-left: -25px;
+	//margin-top: 30px;
+	flex-wrap: wrap;
+	overflow: hidden;
+}
+
+.quote-footer {
+	opacity: .5;
+}
+
+
+.quote__item {
+	@include flex-to(center);
+	flex-direction: column;
+	margin-bottom: 40px;
+	padding: 0 13px;
+	flex: 1 1 300px;
+}
 
 .quote__text {
 	@include font("Roboto-LightItalic");
@@ -6,24 +27,24 @@
 
 .quote__author {
 	@include font("Roboto-BoldItalic");
+}
 
+
+.quote__text_bg {
+	@extend .quote__text;
+	padding: 28px 0 30px;
+	margin-top: -8px;
+	background-image: url("/assets/img/decor/quote.png");
+	background-position: 0 0;
+	background-repeat: no-repeat;
+}
+
+.quote_accent {
+	color: $color-accents;
+}
+
+.quote_d {
 	&::before {
 		content: "— ";
 	}
-}
-
-.quote__accent {
-	color: $color-accents;
-	@include font("Roboto-BoldItalic");
-}
-
-
-//
-.quote_center {
-	@include flex-to(center);
-	flex-direction: column;
-}
-
-.quote_footer {
-	opacity: .5;
 }
