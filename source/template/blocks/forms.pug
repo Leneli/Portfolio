@@ -1,0 +1,30 @@
+mixin formIndex(className)
+	div(class=`form form_dark ${className}`)
+		.form__content
+			include ../blocks/user-head
+			.socials_topm 
+				+socials(socials, "svg_white-green-opacity")
+		+menu(menuIndex, "form__btn", "form__buttons")
+
+
+mixin formLogin(className)
+	div(class=`form form_dark ${className}`)
+		.form__content
+			span.subtitle Авторизуйтесь
+			form.login-form
+				input(type="text" value="login").input
+				input(type="password" value="password").input
+				label
+					input(type="checkbox")
+					| Я человек
+				p Вы точно не робот?
+				label
+					input(type="radio" name="iman")
+					| Да
+				label
+					input(type="radio" name="iman")
+					| Не уверен
+
+		.form__buttons
+			a(class="form__btn" href="/") На главную
+			a.form__btn Войти

@@ -1,12 +1,12 @@
 //var
-$width: 380px;
 $btn-height: 45px;
 $rad: 5px;
 $padd: 20px;
+
 //
 .form {
 	@include flex-to(between-col);
-	width: $width;
+	width: $form-width;
 	border-radius: $rad;
 	overflow: hidden;
 }

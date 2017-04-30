@@ -1,4 +1,10 @@
-html {height: 100%;}
+html {
+	height: 100%;
+	
+	@include tablets {
+		font-size: 14px;
+	}
+}
 
 body {
 	height: 100%;
@@ -53,6 +59,5 @@ img {max-width: 100%;}
 		position: absolute;
 		width: 100%;
 		bottom: 0;
-		//height: 100%;
 	}
 }

@@ -18,8 +18,8 @@ block variables
 
 	
 block content
-	.form__content
-		include ../blocks/user-head
-		.socials_topm 
-			+socials(socials, "svg_white-green-opacity")
-	+menu(menuIndex, "form__btn", "form__buttons")
+
+	.flip
+		.flip__el#login
+			+formIndex("flip__front")
+			+formLogin("flip__back")

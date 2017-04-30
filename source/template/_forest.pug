@@ -1,6 +1,4 @@
 //- default variables
-- var bottomBg = ""
-- var headerSubClass = "header__content_about"
 
 //- variables on the page
 block variables
@@ -11,6 +9,7 @@ include ./helpers/svg-icon
 include ./blocks/meta
 include ./blocks/socials
 include ./blocks/menu
+include ./blocks/forms
 
 
 //- template
@@ -25,13 +24,10 @@ html(lang="ru-RU")
 		.wrapper.bg_forest-full
 			.content.blog_centerd
 
-				block main-menu
-					header
-						a(href="/login.html" class="authorize authorize_top") Авторизоваться
+				span.authorize.authorize_top#authorize(data-flip-id="login") Авторизоваться
 
 				main
-					.form.form_dark
-						block content
+					block content
 
 			footer.footer
 				p.text-center © Елена Куклина | Создано с любовью в LoftSchool | 2017

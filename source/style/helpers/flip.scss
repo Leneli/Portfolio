@@ -1,0 +1,44 @@
+//var
+$flip-height: 395px;
+
+//container
+.flip {
+	width: $form-width;
+	height: $flip-height;
+	perspective: 1000px;
+}
+
+//front and back
+.flip__front,
+.flip__back { height: $flip-height; }
+
+.flip__front, .flip__back {
+	backface-visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.flip__front {
+	z-index: 2;
+	transform: rotateY(0deg);
+}
+
+.flip__back {
+	transform: rotateY(-180deg);
+}
+
+//flip effect
+.flip__el {
+	position: relative;
+	transform: rotateY(0deg);
+	transition: 0.6s;
+	transform-style: preserve-3d;
+}
+
+.flipper {
+	position: relative;
+	transform: rotateY(180deg);
+	transition: 0.6s;
+	transform-style: preserve-3d;
+}

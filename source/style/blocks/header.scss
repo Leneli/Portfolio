@@ -1,6 +1,7 @@
 //blocks
 .header {
 	@include flex-to(between-col);
+	height: 100vh;
 	position: relative;
 	color: $color-white;
 }
