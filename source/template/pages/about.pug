@@ -4,7 +4,6 @@ block variables
 	- var title = "About"
 	- var leftTraingleClass = "traingle_about-left"
 	- var rightTraingleClass = "traingle_about-right"
-	- var bottomBg = "bg_map"
 
 
 block content
@@ -41,6 +40,10 @@ block content
 
 
 
-	section.section_map
-		.map
-			include ../blocks/contacts
+	section.section_contacts
+		include ../blocks/contacts
+
+
+block picture
+	.picture
+		img(src="/assets/img/bg/map.png" alt="")

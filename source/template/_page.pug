@@ -1,5 +1,4 @@
 //- default variables
-- var bottomBg = ""
 - var headerSubClass = "header__content_about"
 
 //- variables on the page
@@ -28,7 +27,7 @@ html(lang="ru-RU")
 	body
 		include ./blocks/main-menu
 
-		div(class=`wrapper ${bottomBg}`)
+		.wrapper
 			.content.content_page
 				header.header.bg_forest-full
 					
@@ -46,6 +45,8 @@ html(lang="ru-RU")
 
 				main.main
 					block content
+
+			block picture
 
 
 			footer.footer

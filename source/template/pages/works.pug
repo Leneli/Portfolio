@@ -2,7 +2,6 @@ extends ../_page
 
 block variables
 	- var title = "Works"
-	- var bottomBg = "bg_forest-bottom"
 	- var leftTraingleClass = "traingle_works"
 	- var rightTraingleClass = "traingle_works"
 
@@ -21,7 +20,7 @@ block content
 
 		include ../blocks/quotes
 
-		.section_center
+		.section_contacts
 			.form.form_light
 				.form__content
 					h2.subtitle Связаться со мной
@@ -32,3 +31,8 @@ block content
 				.form__buttons
 					a.form__btn Отправить
 					a.form__btn Очистить
+
+
+block picture
+	.picture
+		img(src="/assets/img/bg/forest2.png" alt="")
