@@ -1,7 +1,7 @@
-(function() {
+window.onload = function() {
 	"use strict";
 
-	var authorize = document.getElementById("authorize"),
+	let authorize = document.getElementById("authorize"),
 		flipClass = "flipper";
 
 	//login form
@@ -19,7 +19,7 @@
 	//перевернуть карту при клике вне ее
 	document.body.addEventListener("click", function(e) {
 		if(!e) e = window.event;
-    	var elems = e.path,
+    	let elems = e.path,
 			flag = true;
 
 		for(let i = 0; i < elems.length; i++) {
@@ -31,4 +31,4 @@
 		if(flag) document.getElementById("login").classList.remove(flipClass);
 	});
 
-})();
+};
