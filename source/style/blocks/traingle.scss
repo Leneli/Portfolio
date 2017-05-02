@@ -17,4 +17,8 @@
 
 .traingle_about-right {
 	fill: $color-bg2;
+
+	@include tablets {
+		fill: $color-bg5;
+	}
 }

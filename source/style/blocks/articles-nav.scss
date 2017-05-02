@@ -1,6 +1,13 @@
 .articles-nav {
 	flex-basis: 505px;
 	padding-right: 116px;
+
+	@include for-blog {
+		display: none;
+		transform: translateX(-200%);
+		padding-right: 0;
+		background: $color-buttons;
+	}
 }
 
 .articles-nav__link {
@@ -10,12 +17,21 @@
 	text-decoration: none;text-align: right;
 	border-right: 3px solid $color-bg3;
 	&:hover {
-		@extend .articles-nav__link_actove;
+		@extend .articles-nav__link_active;
+	}
+
+	@include for-blog {
+		color: $color-white;
+		border: none;
 	}
 }
 
-.articles-nav__link_actove {
+.articles-nav__link_active {
 	@include font("Roboto-Bold");
 	color: $color-accents;
 	border-color: $color-accents;
+
+	@include for-blog {
+		color: $color-white;
+	}
 }

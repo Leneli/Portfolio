@@ -3,6 +3,9 @@ $padding-exter: 70px;
 $line-width: 681px;
 $line-height: 5px;
 
+$padding-inner-media: 10px;
+$padding-exter-media: 27px;
+
 
 .article {
 	max-width: 880px;
@@ -17,13 +20,29 @@ $line-height: 5px;
 			height: $line-height;
 			margin-top: $padding-exter;
 			background: rgba($color-font-head, .07);
+
+			@include for-blog {
+				width: 100%;
+				margin-top: $padding-exter-media;
+			}
 		}
+	}
+
+	@include for-blog {
+		max-width: 100%;
+		margin-left: $padding-inner-media;
+		margin-right: $padding-inner-media;
+		margin-bottom: $padding-exter-media;
 	}
 }
 
 .article__name {
 	@extend %head2;
 	margin-bottom: $padding-inner;
+
+	@include for-blog {
+		text-align: left;
+	}
 }
 
 .article__date {

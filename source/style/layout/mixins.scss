@@ -11,6 +11,12 @@
 	}
 }
 
+@mixin for-blog() {
+	@media screen and (max-width: 900px) {
+		@content;
+	}
+}
+
 
 //add font
 @mixin font($family) {
