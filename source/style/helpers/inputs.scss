@@ -26,7 +26,8 @@
 //checkbox and radio
 $size: 20px;
 $bg: $color-white;
-$mrg: 6px;
+$mrg-check: 0;
+$mrg-radio: 6px;
 $border: 0;
 $brd-radius-check: 3px;
 $brd-radius-radio: 50%;
@@ -40,11 +41,12 @@ $custom-background: $color-buttons;   /* color or image */
  /* view for custom checkbox */
 .checkbox-custom,
 .radio-custom {
-	  position: relative;
+	position: relative;
     width: $size;
     height: $size;
-	  background: $bg;
+	background: $bg;
     border: $border;
+	cursor: pointer;
 }
 
 /* centering */
@@ -61,18 +63,27 @@ $custom-background: $color-buttons;   /* color or image */
     content: "";
     display: block;
     position: absolute;
-		/* positioning */
-    top: $mrg;
-    right: $mrg;
-    bottom: $mrg;
-    left: $mrg;
-		/* view */
-    background: $custom-background;
 }
 
 // checkbox
+.checkbox:checked + .checkbox-custom::before {
+	content: "✔"; //"\f14a"
+	line-height: $size;
+	text-align: center;
+	color: $bg;
+}
 .checkbox-custom,
 .checkbox:checked + .checkbox-custom::before { border-radius: $brd-radius-check; }
+
+.checkbox:checked + .checkbox-custom::before {
+	/* positioning */
+    top: $mrg-check;
+    right: $mrg-check;
+    bottom: $mrg-check;
+    left: $mrg-check;
+		/* view */
+    background: $custom-background;
+}
 
 // radio
 .radio-custom,
@@ -80,7 +91,17 @@ $custom-background: $color-buttons;   /* color or image */
     border-radius: $brd-radius-radio;
 }
 
-.radio:checked + .label { color: $custom-background; }
+.radio:checked + .radio-custom::before {
+		/* positioning */
+    top: $mrg-radio;
+    right: $mrg-radio;
+    bottom: $mrg-radio;
+    left: $mrg-radio;
+		/* view */
+    background: $custom-background;
+}
+
 
 //padding for text in label
-.label { padding: 0 10px; }
+.label { padding-left: 10px; }
+.radio:checked ~ .label { color: $custom-background; }

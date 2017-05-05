@@ -15,11 +15,12 @@ mixin formLogin(className)
 				input(type="text" value="login").input
 				input(type="password" value="password").input
 
-				+check("checkbox", "checkbox-name", "id1", "Я человек")
+				.text-center
+					+check("checkbox", "checkbox-name", "id1", "Я человек")
 
-				p Вы точно не робот?
-				+check("radio", "radio-name", "id2", "Да")
-				+check("radio", "radio-name", "id3", "Не уверен")
+					p Вы точно не робот?
+					+check("radio", "radio-name", "id2", "Да")
+					+check("radio", "radio-name", "id3", "Не уверен")
 
 		.form__buttons
 			a(class="form__btn" href="/") На главную
