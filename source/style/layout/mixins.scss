@@ -74,3 +74,12 @@
 		border-bottom: 3px solid;
 	}
 }
+
+
+//parallax
+@mixin parallax-background($url, $bgSize: cover) {
+    background-image: url($url);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: $bgSize;
+}

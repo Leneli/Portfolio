@@ -1,0 +1,28 @@
+//the size of the image
+$width: 1800px;
+$height: 954px;
+
+.parallax {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+}
+.parallax__layer {
+	position: absolute;
+	height: $height;
+	width: $width;
+	//отцентрировать
+	margin-left: -($width / 2);
+	left: 50%;
+	bottom: -30px;
+}
+
+.parallax__forest {
+	&_l1  { @include parallax-background("/assets/img/parallax/layer_1.png"); }
+	&_l2  { @include parallax-background("/assets/img/parallax/layer_2.png"); }
+	&_l3  { @include parallax-background("/assets/img/parallax/layer_3.png"); }
+	&_l4  { @include parallax-background("/assets/img/parallax/layer_4.png"); }
+}
