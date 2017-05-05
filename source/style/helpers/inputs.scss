@@ -22,3 +22,65 @@
 	padding-bottom: 15px;
 	resize: none;
 }
+
+//checkbox and radio
+$size: 20px;
+$bg: $color-white;
+$mrg: 6px;
+$border: 0;
+$brd-radius-check: 3px;
+$brd-radius-radio: 50%;
+$custom-background: $color-buttons;   /* color or image */
+
+// checkbox and radio
+.checkbox,
+.radio {
+    display: none;
+}
+ /* view for custom checkbox */
+.checkbox-custom,
+.radio-custom {
+	  position: relative;
+    width: $size;
+    height: $size;
+	  background: $bg;
+    border: $border;
+}
+
+/* centering */
+.checkbox-custom,
+.radio-custom,
+.label {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* custom element */
+.checkbox:checked + .checkbox-custom::before,
+.radio:checked + .radio-custom::before {
+    content: "";
+    display: block;
+    position: absolute;
+		/* positioning */
+    top: $mrg;
+    right: $mrg;
+    bottom: $mrg;
+    left: $mrg;
+		/* view */
+    background: $custom-background;
+}
+
+// checkbox
+.checkbox-custom,
+.checkbox:checked + .checkbox-custom::before { border-radius: $brd-radius-check; }
+
+// radio
+.radio-custom,
+.radio:checked + .radio-custom::before {
+    border-radius: $brd-radius-radio;
+}
+
+.radio:checked + .label { color: $custom-background; }
+
+//padding for text in label
+.label { padding: 0 10px; }
