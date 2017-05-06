@@ -18,7 +18,13 @@ mixin button(arowDirection, btnClass)
 	.slider__nav
 		.slider__btn
 			img(src="/assets/img/works/work-1.png" alt="test")
-			+button("", "prew")
+			//-+button("", "prew")
+			.slider__btn_top.prew
+				+arrow("#", "svg_white")(class="arrow_down arrow_slider")
+
+
 		.slider__btn
 			img(src="/assets/img/works/work-3.png" alt="test")
-			+button("arrow_up", "next")
+			//-+button("arrow_up", "next")
+			.slider__btn_top.next
+				+arrow("#", "svg_white")(class="arrow_up arrow_slider")

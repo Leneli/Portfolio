@@ -19,16 +19,25 @@
 .title_works {
 	@extend .title;
 	@include head-underline(18px);
-	padding: 73px 96px 48px 76px;
+	padding: 73px 0 48px 0;
 	background-image: url("/assets/img/decor/works-header.png");
+
+	@include phones {
+		padding: 50px 0 40px 0;
+		margin-top: -20px;
+	}
 }
 
 .title_speak {
 	@extend .title;
 	@include head-underline();
-	padding: 45px 88px 40px 78px;
+	padding: 45px 0 40px 0;
 	background-image: url("/assets/img/decor/about-header.png");
-	width: 510px;
+	max-width: 510px;
+
+	@include phones {
+		padding: 27px 0;
+	}
 }
 
 .title_about {

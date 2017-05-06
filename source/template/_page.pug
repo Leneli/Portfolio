@@ -36,7 +36,7 @@ html(lang="ru-RU")
 					block header-nav
 						.header__nav
 							+socials(socials, "svg_white-green")
-							+arrowDown("arrow_head")
+							+arrow("#", "svg_white-opacity")(class="arrow_down arrow_head")
 							include ./blocks/hamburger
 
 					div(class=`header__content ${headerSubClass}`)

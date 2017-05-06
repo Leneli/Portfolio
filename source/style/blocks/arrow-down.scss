@@ -1,23 +1,47 @@
-.arrow-down {
+.arrow {
 	display: block;
-	position: absolute;
 	width: 26px;
 	height: 16px;
-	margin-left: -(26px / 2);
-	
 }
 
 .arrow_head {
+	position: absolute;
 	bottom: 70px;
 	left: 50%;
+	margin-left: -(26px / 2);
 }
 
 .arrow_slider {
 	top: 50%;
 	left: 50%;
 	transform: translate(50% 50%);
+
+	@include tablets {
+		
+	}
+}
+
+
+//direction and shadow
+.arrow_down {
+	@extend .arrow;
+	filter: drop-shadow(1px 3px 1px rgba($color-black, .3));
 }
 
 .arrow_up {
+	@extend .arrow;
 	transform: rotate(180deg);
+	filter: drop-shadow(-1px -3px 1px rgba($color-black, .3));
+}
+
+.arrow_left {
+	@extend .arrow;
+	transform: rotate(90deg);
+	filter: drop-shadow(3px 1px 1px rgba($color-black, .3));
+}
+
+.arrow_right {
+	@extend .arrow;
+	transform: rotate(-90deg);
+	filter: drop-shadow(-3px 1px 1px rgba($color-black, .3));
 }

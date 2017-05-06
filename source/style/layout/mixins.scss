@@ -52,6 +52,16 @@
 	font-size: 63px;
 	line-height: 63px;
 	text-align: center;
+
+	@include tablets {
+		font-size: 48px;
+		line-height: 48px;
+	}
+
+	@include phones {
+		font-size: 35px;
+		line-height: 35px;
+	}
 }
 
 %head2 {
@@ -59,6 +69,16 @@
 	font-size: 35px;
 	line-height: 35px;
 	text-align: center;
+
+	@include tablets {
+		font-size: 30px;
+		line-height: 30px;
+	}
+
+	@include phones {
+		font-size: 21px;
+		line-height: 21px;
+	}
 }
 
 @mixin head-underline($bottom: 0) {
