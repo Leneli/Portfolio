@@ -1,9 +1,6 @@
-"use strict";
-
 window.onload = function() {
 	let layers = document.getElementsByClassName("parallax__layer"),
 	parallax;
-
 
 	let moveLaers = function(e) {
 		e = e || event;
@@ -24,7 +21,6 @@ window.onload = function() {
 			layers[i].style.transform = transformStyle;
 		}
 	};
-
 
 	window.addEventListener("mousemove", moveLaers);
 };
