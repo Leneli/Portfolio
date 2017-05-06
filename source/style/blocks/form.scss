@@ -9,6 +9,16 @@ $padd: 20px;
 	width: $form-width;
 	border-radius: $rad;
 	overflow: hidden;
+
+	@include phones {
+		width: 90%;
+		margin: 0 5%;
+	}
+}
+
+.login-form {
+	margin-top: 20px;
+	width: 100%;
 }
 
 //
@@ -42,7 +52,19 @@ $padd: 20px;
 	width: 100%;
 }
 
-//
+.form__captcha {
+	@include flex-to(center);
+	flex-direction: column;
+
+	.p-mrg { margin: 13px 0 5px 0; }
+}
+.form__captcha_radio {
+	width: 60%;
+	@include flex-to(between);
+	justify-content: space-between;
+}
+
+//background
 .form_dark {
 	background: rgba($color-windows, .6);
 	color: $color-white;

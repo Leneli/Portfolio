@@ -12,15 +12,21 @@ mixin formLogin(className)
 		.form__content
 			span.subtitle Авторизуйтесь
 			form.login-form
-				input(type="text" value="login").input
-				input(type="password" value="password").input
+				.input.input_login
+					input(type="text" placeholder="Логин").input_hidden
+					//-input(type="text" placeholder="Логин").input.input_login
+				.input.input_passw
+					input(type="password" placeholder="Пароль").input_hidden
+					//-input(type="password" placeholder="Пароль").input.input_passw
 
-				.text-center
+				.form__captcha
 					+check("checkbox", "checkbox-name", "id1", "Я человек")
 
-					p Вы точно не робот?
-					+check("radio", "radio-name", "id2", "Да")
-					+check("radio", "radio-name", "id3", "Не уверен")
+					p.p-mrg Вы точно не робот?
+
+					div.form__captcha_radio
+						+check("radio", "radio-name", "id2", "Да")
+						+check("radio", "radio-name", "id3", "Не уверен")
 
 		.form__buttons
 			a(class="form__btn" href="/") На главную
