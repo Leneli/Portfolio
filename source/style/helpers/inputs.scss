@@ -20,7 +20,7 @@ $input-height: 45px;
 .input {
 	@extend %input;
 	position: relative;
-	margin: 10px 0;
+	//margin: 10px 0;
 	background: rgba($color-white, .85);
 }
 
@@ -37,7 +37,7 @@ $input-height: 45px;
 //login and password
 .input_login,
 .input_passw {
-	margin-bottom: 20px;
+	//margin-bottom: 20px;
 
 	&::before {
 		content: "";

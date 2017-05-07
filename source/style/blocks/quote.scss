@@ -32,6 +32,7 @@
 
 .quote__text_bg {
 	@extend .quote__text;
+	width: 100%;
 	padding: 28px 0 30px;
 	margin-top: -8px;
 	background-image: url("/assets/img/decor/quote.png");
