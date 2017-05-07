@@ -1,7 +1,6 @@
 //common titles
 .title {
 	@extend %head1;
-	margin: auto;
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: contain;
@@ -31,6 +30,7 @@
 .title_speak {
 	@extend .title;
 	@include head-underline();
+	margin: auto;
 	padding: 45px 0 40px 0;
 	background-image: url("/assets/img/decor/about-header.png");
 	max-width: 510px;
@@ -44,7 +44,13 @@
 	@extend .title;
 	@include head-underline();
 	padding: 55px 60px 30px 65px;
+	height: 170px;
+	margin-top: -70px;
 	background-image: url("/assets/img/decor/about-header.png");
+
+	@include tablets {
+		margin-top: 0;
+	}
 }
 
 .title_blog  {

@@ -1,36 +1,95 @@
+$width-tablet: 390px;
+
 .about {
-	display: flex;
-	flex-wrap: wrap;
+	@extend .columns;
+
+	@include tablets {
+		flex-direction: column;
+	}
 }
 
+.about__user {
+	@extend .section-bg_about;
+	@extend .columns__two;
+	@extend .columns;
 
-.about__item {
-	flex: 1 1 400px;
-
-	padding: 0 20px 0 40px;
+	@include laptops {
+		flex-direction: column;
+	}
 }
 
+.about__user_title {
+	@extend .columns__two;
+	padding: 40px 0 60px  0;
 
-.about__item_up {
-	height: 170px;
-	margin-top: -61px;
-}
+	@include laptops {
+		flex: 0;
+		padding-top: 0;
+		padding-bottom: 0;
+	}
 
-.about__item_l {
-	@extend .about__item;
-	display: flex;
-	flex-wrap: wrap;
-	align-content: flex-start;
-	& > * {
-		flex: 1 1 400px;
+	@include tablets {
 		
+	}
+}
+
+.about__user_info {
+	@extend .columns__two;
+	@extend .about_padd;
+
+	@include laptops {
 		display: flex;
-		width: 445px;
+		flex-direction: column;
+		align-items: center;
+		& > p { max-width: $width-tablet; }
+	}
+}
+
+.about__skills {
+	@extend .section-bg_skills;
+	@extend .columns__two;
+	@extend .about_padd;
+
+	@include laptops {
+		& > p {
+			max-width: $width-tablet;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+
+	@include tablets {
+		& > .subtitle { padding-top: 50px; }
+	}
+}
+
+.about__skills_position {
+	@include tablets {
+		display: flex;
 		flex-direction: column;
 		align-items: center;
 	}
 }
 
-.about__item_r {
-	@extend .about__item;
+
+//paddings
+.about_padd {
+	padding: 40px 35px 60px 35px;
+
+	@include laptops {
+		padding-top: 0;
+	}
+
+	@include phones {
+		padding: 0 10px 30px 10px;
+	}
+}
+
+.about_userpic {
+	margin-bottom: 40px;
+
+	@include laptops {
+		width: $width-tablet;
+		margin-top: 40px;
+	}
 }

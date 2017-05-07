@@ -7,32 +7,31 @@ block variables
 
 
 block content
-	section.about
-
-		section.about__item_l.section-bg_about
-			.about__item_up
+	.about
+		section.about__user
+			.about__user_title
 				h1.title_about Обо мне
 
-			div
-				+userpic()
+			.about__user_info
+				+userpic("about_userpic")
 				h2.subtitle Кто я
-				.about-text
-					p.paragraph
-						|Я веб разработчик из Новосибирска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+				p.paragraph
+					|Я веб разработчик из Новосибирска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
 
-		section.about__item_r.section-bg_skills
-			h2.subtitle Чем я могу быть вам полезен
+		section.about__skills
+			h2.subtitle Чем я могу быть вам полезна
 			p.paragraph
-				| Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачина Backend. Но давайте по порядку.
-
-			span.skills__group-name Frontend
-			+skills(Frontend)
-
-			span.skills__group-name Backend
-			+skills(Backend)
+				| Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
 			
-			span.skills__group-name WorkFlow
-			+skills(WorkFlow)
+			.about__skills_position
+				span.skills__group-name Frontend
+				+skills(Frontend)
+
+				span.skills__group-name Backend
+				+skills(Backend)
+				
+				span.skills__group-name WorkFlow
+				+skills(WorkFlow)
 			
 
 	section.section_contacts

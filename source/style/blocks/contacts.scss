@@ -1,18 +1,30 @@
 //block with contact form
 .section_contacts {
 	@include flex-to(center);
-	height: 600px;
+	height: 100vh;
+
+	background: $color-buttons;
+
+	@include phones {
+		align-items: flex-start;
+	}
 }
 
 
 .contacts {
-	
 	width: 380px;
 	min-height: 312px;
 	padding: 36px 40px;
 	background: rgba($color-bg2, .85);
 	color: $color-font-blog;
+	box-shadow: 0 0 15px #999;
 	border-radius: 5px;
+
+	@include phones {
+		width: 100%;
+		box-shadow: none;
+		border-radius: 0;
+	}
 }
 
 

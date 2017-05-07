@@ -5,6 +5,10 @@ $stroke-width: 20px;
     display: flex;
     flex-wrap: wrap;
     margin-left: -$stroke-width;
+
+    @include tablets {
+        justify-content: center;
+    }
 }
 .skills__item {
     position: relative;
