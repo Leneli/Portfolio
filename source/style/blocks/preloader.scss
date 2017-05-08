@@ -1,0 +1,68 @@
+.preloader {
+	position: fixed;
+	@include flex-to(center);
+	width: 100vw;
+	height: 100vh;
+	top: 0;
+	background-image: url("../img/bg/preloader.jpg");
+	background-size: cover;
+	color: $color-white;
+	z-index: 999;
+}
+
+.preloader__spinnre {
+	position: relative;
+	text-align: center;
+	width: 80px;
+	height: 95px;
+}
+
+.preloader__percents {
+	font-size: 24px;
+	font-weight: bold;
+	animation: fade 1s ease 0s infinite;
+}
+
+.preloader__animation {
+	position: absolute;
+	width: 100%;
+	top: 30px;
+}
+
+.preloader__line {
+	width: 80px;
+	height: 10px;
+	position: absolute;
+	clip: rect(0, 0, 20px, 0);
+
+	&.line-1 {
+        top: 0;
+        animation: slide 2s ease 0s infinite;
+    }
+      
+    &.line-2 {
+        top: 20px;
+        animation: slide 2s ease 0.25s infinite;
+    }
+      
+    &.line-3 {
+        top: 40px;
+        animation: slide 2s ease 0.5s infinite;
+    }
+}
+
+
+//animation
+@keyframes slide {
+	0%   { clip: rect(0, 0, 20px, 0); }
+	30%  { clip: rect(0, 80px, 20px, 0); }
+	50%  { clip: rect(0, 80px, 20px, 0); }
+  	80%  { clip: rect(0, 80px, 20px, 80px); }
+	100% { clip: rect(0, 80px, 20px, 80px); }
+}
+
+@keyframes fade {
+	0%   { opacity: 1; }
+	50%  { opacity: 0; }
+	100% { opacity: 1; }
+}
