@@ -31,7 +31,7 @@
 
 .preloader__line {
 	width: 80px;
-	height: 10px;
+	height: 14px;
 	position: absolute;
 	clip: rect(0, 0, 20px, 0);
 
@@ -41,7 +41,7 @@
     }
       
     &.line-2 {
-        top: 20px;
+        top: 21px;
         animation: slide 2s ease 0.25s infinite;
     }
       
