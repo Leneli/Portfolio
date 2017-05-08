@@ -1,3 +1,4 @@
+//Flip effect
 (function() {
 	document.addEventListener("DOMContentLoaded", function() {
 

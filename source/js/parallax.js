@@ -1,3 +1,4 @@
+//Parallax
 window.onload = function() {
 	let layers = document.getElementsByClassName("parallax__layer"),
 	parallax;
