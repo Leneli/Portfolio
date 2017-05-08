@@ -1,5 +1,14 @@
 $input-height: 45px;
 
+@keyframes check {
+	0%   { transform: scale(0); }
+	100% { transform: scale(1); }
+}
+@keyframes radio {
+	0%   { transform: scale(1); }
+	100% { transform: scale(.5); }
+}
+
 //.form { width: 100%; }
 
 %input {
@@ -112,17 +121,16 @@ $custom-background: $color-buttons;   /* color or image */
 	line-height: $size;
 	text-align: center;
 	color: $bg;
+	animation: check .2s ease-in-out;
 }
 .checkbox-custom,
 .checkbox:checked + .checkbox-custom::before { border-radius: $brd-radius-check; }
 
 .checkbox:checked + .checkbox-custom::before {
-	/* positioning */
     top: $mrg-check;
     right: $mrg-check;
     bottom: $mrg-check;
     left: $mrg-check;
-		/* view */
     background: $custom-background;
 }
 
@@ -133,13 +141,13 @@ $custom-background: $color-buttons;   /* color or image */
 }
 
 .radio:checked + .radio-custom::before {
-		/* positioning */
-    top: $mrg-radio;
-    right: $mrg-radio;
-    bottom: $mrg-radio;
-    left: $mrg-radio;
-		/* view */
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     background: $custom-background;
+	transform: scale(.4);
+	animation: radio .2s ease-in-out;
 }
 
 
