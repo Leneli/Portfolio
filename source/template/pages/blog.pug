@@ -17,10 +17,12 @@ block header-content
 
 block content
 	.blog#blog
-		nav.sidebar
+		aside.sidebar
+			nav.sidebar-nav
+				each link in ["Статья 1", "Статья 2", "Статья 3", "Статья 4"]
+					span.sidebar__link #{link}
+
 			.sidebar__btn#btn
-			each link in ["Статья 1", "Статья 2", "Статья 3", "Статья 4"]
-				span.sidebar__link #{link}
 
 		section.blog__content
 			article.article
