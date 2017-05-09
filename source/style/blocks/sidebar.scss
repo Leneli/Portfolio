@@ -1,0 +1,79 @@
+$shadow: 3px 0 3px rgba($color-black, 0.2);
+
+
+.sidebar {
+	flex-basis: 500px;
+	padding-right: 116px;
+
+	@include for-blog {
+		position: fixed;
+		top: 0;
+		width: $width-sidebar;
+		height: 100%;
+		transform: translateX(-100%);
+		transition: $blog-transition;
+		padding-right: 0;
+		background: $color-buttons;
+		box-shadow: $shadow;
+		z-index: 100;
+	}
+
+	@include phones { max-width: 80vw; }
+
+	&.fixed {
+		position: fixed;
+		top: 0;
+		width: 500px;
+
+		@include for-blog { width: $width-sidebar; }
+	}
+}
+
+.sidebar__btn {
+	position: absolute;
+	opacity: 0;
+	width: 60px;
+	height: 60px;
+	right: -25px;
+	top: 50%;
+	transform: translateY(-50%);
+	border-radius: 50%;
+	background-color: $color-buttons;
+	box-shadow: $shadow;
+	cursor: pointer;
+
+	@include for-blog {
+		opacity: 1;
+		transition: opacity 2.5s;
+	}
+}
+
+
+//links in menu
+.sidebar__link {
+	display: block;
+	padding: 15px 17px 15px 0;
+	color: $color-font-blog;
+	text-decoration: none;
+	text-align: right;
+	border-right: 3px solid $color-bg3;
+	cursor: pointer;
+	&:hover {
+		@extend .sidebar__link_active;
+	}
+
+	@include for-blog {
+		color: rgba($color-white, .8);
+		border: none;
+	}
+}
+
+.sidebar__link_active {
+	@include font("Roboto-Bold");
+	color: $color-accents;
+	border-color: $color-accents;
+
+	@include for-blog {
+		color: $color-white;
+	}
+}

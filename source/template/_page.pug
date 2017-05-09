@@ -1,4 +1,5 @@
 //- default variables
+- var headerClass = "bg_forest-full"
 - var headerSubClass = "header__content_about"
 
 //- variables on the page
@@ -32,7 +33,7 @@ html(lang="ru-RU")
 
 		.wrapper
 			.content.content_page
-				header.header.bg_forest-full
+				header(class=`header ${headerClass}`)
 					
 					block header-nav
 						.header__nav

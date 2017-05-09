@@ -1,0 +1,98 @@
+//Sidebar
+//jQuery
+let scrollSidebar = (function() {
+	let menu = $(".sidebar"),
+		link = $(".sidebar__link"),
+		article = $(".article"),
+		body = document.body,
+		isPositionArticle = [],
+		offsetHeight = 200;
+
+	let positionArticle = function(el) {
+		for(let i = 0; i < el.length; i++) {
+			isPositionArticle[i] = {};
+			isPositionArticle[i].top = el
+				.eq(i)
+          		.offset()
+          		.top - offsetHeight;
+			isPositionArticle[i].bottom = isPositionArticle[i].top + el
+				.eq(i)
+				.innerHeight();
+		}
+	};
+
+	let menuFixed = function() {
+		let scroll = window.pageYOffset;
+
+		if(scroll < article.offset().top) {
+			menu.removeClass("fixed");
+			$(".blog__content").removeClass("nav-fixed");
+		}
+		else {
+			menu.addClass("fixed");
+			$(".blog__content").addClass("nav-fixed");
+		}
+	};
+
+	let scrollPage = function (e) {
+		let scroll = window.pageYOffset;
+
+		for (let i = 0; i < isPositionArticle.length; i++) {
+			if (scroll >= isPositionArticle[i].top && scroll <= isPositionArticle[i].bottom) {
+				link
+					.eq(i)
+					.addClass("sidebar__link_active")
+					.siblings()
+					.removeClass("sidebar__link_active");
+			}
+		}
+	};
+
+	let clickOnMenu = function (e) {
+		let index = $(e.target).index();
+		let sectionOffset = article
+			.eq(index)
+			.offset()
+			.top;
+		$(document).off("scroll", scrollPage);
+		$("body, html").animate({
+			"scrollTop": sectionOffset
+		}, function () {
+			$(e.target)
+				.addClass("sidebar__link_active")
+				.siblings()
+				.removeClass("sidebar__link_active");
+			$(document).on("scroll", scrollPage);
+		});
+	};
+
+	let addListener = function () {
+      $(menu).on("click", clickOnMenu);
+
+      $(document).on("scroll", scrollPage);
+      $(document).on("scroll", menuFixed);
+
+      $(window).on("load", function (e) {
+        positionArticle(article);
+      })
+
+      $(window).on("resize", function (e) {
+        positionArticle(article);
+      })
+    }
+
+	return {
+		init: addListener
+	}
+})();
+
+scrollSidebar.init();
+
+
+
+//toggle class 
+$(function() {
+	$("#btn").on("click", function () {
+		$("#blog").toggleClass("on");
+	});
+});

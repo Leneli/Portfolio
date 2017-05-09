@@ -6,6 +6,8 @@
 	color: $color-white;
 }
 
+.header_blog { height: auto; }
+
 //elements
 .header__nav {
 	@include flex-to(between);

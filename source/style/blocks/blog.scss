@@ -2,19 +2,30 @@
 	display: flex;
 	padding-top: 70px;
 	background: $color-bg3;
+
+	&.on {
+		@include for-blog {
+			.sidebar       { transform: translateX(0); }
+			.blog__content { transform: translateX($width-sidebar);}
+		}
+	}
 }
 
-.blog_centerd {
-	@include flex-to(center);
-	flex-direction: column;
+.blog__content {
+	flex: 1;
+	flex-basis: calc(100% - 500px);
+	transform: translateX(0);
+	transition: $blog-transition;
+
+	&.nav-fixed {
+	margin-left: 500px;
+		@include for-blog { margin-left: 0; }
+	}
 }
 
+
+//Header on the page
 .user__desc_blog {
 	@extend .user__desc;
 	margin-top: -50px;
-}
-
-
-.blog_content {
-	//flex: 1;
 }

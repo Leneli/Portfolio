@@ -9,7 +9,7 @@ let preloader = (function () {
 			img = $(el).is("img"),
 			path = "";
 
-		if (bg != "none" && bg != 'url("http://localhost:3000/assets/img/bg/preloader.jpg")') {
+		if (bg != "none") {
 			path = bg.replace('url("', '').replace('")', '');;
 		}
 
@@ -23,7 +23,7 @@ let preloader = (function () {
 	let setPercents = function (total, current) {
 		let persents = Math.ceil(current / total * 100);
 
-		$('#percrnts').text(persents);
+		$("#percrnts").text(persents);
 
 		if (persents >= 100) {
 			preloader.fadeOut();
@@ -35,13 +35,13 @@ let preloader = (function () {
 		if (!images.length) preloader.fadeOut();
 
 		images.forEach(function (img, i, images) {
-			let fakeImage = $('<img>', {
+			let fakeImage = $("<img>", {
 				attr: {
 					src: img
 				}
 			});
 
-			fakeImage.on('load error', function () {
+			fakeImage.on("load error", function () {
 				percents++;
 				setPercents(images.length, percents);
 			});

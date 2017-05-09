@@ -34,3 +34,10 @@
 }
 .link:hover,
 .link:focus {text-decoration: none;}
+
+
+//other
+.centerd {
+	@include flex-to(center);
+	flex-direction: column;
+}

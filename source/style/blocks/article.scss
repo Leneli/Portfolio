@@ -30,7 +30,7 @@ $padding-exter-media: 27px;
 
 	@include for-blog {
 		max-width: 100%;
-		margin-left: $padding-inner-media;
+		margin-left: $padding-inner-media + 20px;
 		margin-right: $padding-inner-media;
 		margin-bottom: $padding-exter-media;
 	}
