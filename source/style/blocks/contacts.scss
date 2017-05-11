@@ -1,15 +1,12 @@
 //block with contact form
 .section_contacts {
+	position: relative;
 	@include flex-to(center);
-	height: 100vh;
-
-	@include phones {
-		align-items: flex-start;
-	}
 }
 
 
 .contacts {
+	position: absolute;
 	width: 380px;
 	min-height: 312px;
 	padding: 36px 40px;
