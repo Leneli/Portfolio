@@ -34,10 +34,15 @@ block content
 				+skills(WorkFlow)
 			
 
-	section.section_contacts(style="background: #6c9c5a;")
+	section.section_contacts.map#map(style="position:relative;width: 100%; heidht:100%;")
 		include ../blocks/contacts
 
 
-block picture
+//-block picture
 	.picture
-		img(src="/assets/img/bg/map.png" alt="")
+
+block scripts
+	script(src="https://maps.google.com/maps/api/js?key=AIzaSyAZe3pwlV8cGPBW61YinwvL-9d-kFSTVp0")
+	script(src="https://cdn.mapkit.io/v1/infobox.js")
+	link(rel="stylesheet" href='https://cdn.mapkit.io/v1/infobox.css')
+	script(src="/assets/js/google.map.js" defer)

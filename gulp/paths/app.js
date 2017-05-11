@@ -7,4 +7,5 @@ module.exports = [
 	"./source/js/mainmenu.js",
 	"./source/js/preloader.js",
 	"./source/js/sidebar.js"
+	//"./source/js/googleMap.js"
 ];
