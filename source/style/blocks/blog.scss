@@ -6,19 +6,19 @@
 	&.on {
 		@include for-blog {
 			.sidebar       { transform: translateX(0); }
-			.blog__content { transform: translateX($width-sidebar);}
+			.blog__content { transform: translateX($width-sidebar-px);}
 		}
 	}
 }
 
 .blog__content {
 	flex: 1;
-	flex-basis: calc(100% - 500px);
+	flex-basis: calc(100% - $width-sidebar-pc);
 	transform: translateX(0);
 	transition: $blog-transition;
 
 	&.nav-fixed {
-	margin-left: 500px;
+	margin-left: $width-sidebar-pc;
 		@include for-blog { margin-left: 0; }
 	}
 }

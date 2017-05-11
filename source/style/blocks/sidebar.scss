@@ -2,13 +2,13 @@ $shadow: 3px 0 3px rgba($color-black, 0.2);
 
 
 .sidebar {
-	flex-basis: 500px;
+	flex-basis: $width-sidebar-pc;
 	padding-right: 116px;
 
 	@include for-blog {
 		position: fixed;
 		top: 0;
-		width: $width-sidebar;
+		width: $width-sidebar-px;
 		height: 100%;
 		transform: translateX(-100%);
 		transition: $blog-transition;
@@ -23,9 +23,9 @@ $shadow: 3px 0 3px rgba($color-black, 0.2);
 	&.fixed {
 		position: fixed;
 		top: 0;
-		width: 500px;
+		width: $width-sidebar-pc;
 
-		@include for-blog { width: $width-sidebar; }
+		@include for-blog { width: $width-sidebar-px; }
 	}
 }
 

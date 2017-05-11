@@ -1,7 +1,11 @@
 //Sidebar
 //jQuery
-/*$(function() {
-	let scrollSidebar = (function() {
+let blog = document.getElementById("blog");
+
+//если элемент blog существует
+forElement(blog).then(function () {
+	//модуль Sidebar
+	let scrollSidebar = (function () {
 		let sidebar = $(".sidebar"),
 			menu = $(".sidebar-nav"),
 			link = $(".sidebar__link"),
@@ -10,8 +14,8 @@
 			isPositionArticle = [],
 			offsetHeight = $(".blog__content")[0].offsetTop - $(".main")[0].offsetTop;
 
-		let positionArticle = function(el) {
-			for(let i = 0; i < el.length; i++) {
+		let positionArticle = function (el) {
+			for (let i = 0; i < el.length; i++) {
 				isPositionArticle[i] = {};
 				isPositionArticle[i].top = el
 					.eq(i)
@@ -23,10 +27,10 @@
 			}
 		};
 
-		let menuFixed = function() {
+		let menuFixed = function () {
 			let scroll = window.pageYOffset;
 
-			if(scroll < article.offset().top) {
+			if (scroll < article.offset().top) {
 				sidebar.removeClass("fixed");
 				$(".blog__content").removeClass("nav-fixed");
 			}
@@ -94,4 +98,4 @@
 	$("#btn").on("click", function () {
 		$("#blog").toggleClass("on");
 	});
-});*/
+});	
