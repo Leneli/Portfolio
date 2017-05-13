@@ -28,7 +28,7 @@ $.gulp.task("default", $.gulp.series(
 		"pug",
 		"js:foundation",
 		"js:process",
-		"js:map",
+		"js:private",
 		"copy:image",
 		"copy:fonts",
 		"css:foundation",

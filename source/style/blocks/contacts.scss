@@ -4,6 +4,11 @@
 	@include flex-to(center);
 }
 
+.section_contacts-me {
+	@extend .section_contacts;
+	height: 100vh;
+}
+
 
 .contacts {
 	position: absolute;
