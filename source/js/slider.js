@@ -8,20 +8,32 @@ forElement(slider).then(function() {
 
 	let Slider = {
 		init() {
-			this.display = document.getElementById("display"),
-			this.header = document.getElementById("header"),
-			this.description = document.getElementById("description"),
-			this.siteLink = document.getElementById("siteLink"),
-			this.btnPrew = document.getElementById("btnPrew"),
-			this.btnNext = document.getElementById("btnNext"),
-			this.btnPrewImg = document.getElementById("btnPrewImg"),
+			this.display = document.getElementById("display");
+			this.header = document.getElementById("header");
+			this.description = document.getElementById("description");
+			this.siteLink = document.getElementById("siteLink");
+			this.btnPrew = document.getElementById("btnPrew");
+			this.btnNext = document.getElementById("btnNext");
+			this.btnPrewImg = document.getElementById("btnPrewImg");
 			this.btnNextImg = document.getElementById("btnNextImg");
 			
 			this.works = [];
 
-			let duration = 500,
-	    		flag = true;
+			this.duration = 1000;
 
+			//let duration = 500,
+	    	//	flag = true;
+
+			this.display.addEventListener("click", function() {
+				Slider.animate({
+					duration: 3000,
+					timing: function(timeFraction) { return timeFraction; },
+					draw: function(progress) {
+						console.log(progress);
+						Slider.display.style.opacity = progress;
+					}
+				});
+			});
 
 			//Ajax
 			this.data("/assets/json/slider.json")
@@ -30,7 +42,7 @@ forElement(slider).then(function() {
 						Slider.works.push(dataArray[i]);
 						Slider.works[i].index = i;
 					}
-					//завполнить слайдер первоначальными данными
+					//заполнить слайдер первоначальными данными
 					Slider.clicking(0, (dataArray.length - 1), 1);
 				})
 				.catch(function(status) {
@@ -47,7 +59,7 @@ forElement(slider).then(function() {
 					];
 
 				Slider.toggleIndexes(indexes, "minus");
-				Slider.clicking(indexes[0], indexes[1], indexes[2]);
+				Slider.addAnimate(indexes[0], indexes[1], indexes[2]);
 			});
 
 			this.btnNext.addEventListener("click", function() {
@@ -58,7 +70,7 @@ forElement(slider).then(function() {
 					];
 
 				Slider.toggleIndexes(indexes, "plus");
-				Slider.clicking(indexes[0], indexes[1], indexes[2]);
+				Slider.addAnimate(indexes[0], indexes[1], indexes[2]);
 			});
 		},
 		
@@ -128,7 +140,56 @@ forElement(slider).then(function() {
 						break;
 				}
 			}
-		}
+		},
+		
+		animate(options) {
+			let start = performance.now();
 
+			requestAnimationFrame(function animate(time) {
+				// timeFraction от 0 до 1
+				let timeFraction = (time - start) / options.duration;
+				if (timeFraction > 1) timeFraction = 1;
+
+				// текущее состояние анимации
+				let progress = timeFraction;
+				//функция, описывающая анимацию
+				options.draw(progress);
+
+				if (timeFraction < 1) {
+					requestAnimationFrame(animate);
+				}
+			});
+		},
+
+		addAnimate(i, j, k) {
+			//анимация до переключения слайда
+			Slider.animate({
+				duration: Slider.duration,
+				draw: function (progress) {
+					Slider.btnPrewImg.style.marginTop = progress * 600 + "px";
+					Slider.btnNextImg.style.marginTop = progress * -600 + "px";
+					Slider.display.style.opacity = 1 - progress;
+				}
+			});
+
+			setTimeout(function () {
+				Slider.clicking(i, j, k);
+
+				Slider.btnPrewImg.style.marginTop = 0 + "px";
+				Slider.btnPrewImg.style.height = 0 + "%";
+				Slider.btnNextImg.style.marginTop = 0 + "px";
+				Slider.btnNextImg.style.height = 0 + "%";
+
+				//анимация после переключения слайда
+				Slider.animate({
+					duration: Slider.duration,
+					draw: function (progress) {
+						Slider.btnPrewImg.style.height = progress * 100 + "%";
+						Slider.btnNextImg.style.height = progress * 100 + "%";
+						Slider.display.style.opacity = progress;
+					}
+				});
+			}, (Slider.duration + 100));
+		}
 	}
 });

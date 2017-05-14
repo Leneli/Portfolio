@@ -8,21 +8,21 @@ mixin button(arowDirection, btnClass)
 .slider#slider
 
 	.slider__picture
-		img#display(src="/assets/img/works/work-2.png" alt="test" data-index="")
+		img#display(src="" alt="" data-index="")
 
 	.slider__desc
-		h2.subtitle.work__title#header Сайт школы онлайн образования
-		span.work__tech#description HTML, CSS, JavaScript
+		h2.subtitle.work__title#header
+		span.work__tech#description
 		a(href="#").work__link#siteLink Просмотреть сайт
 
 	.slider__nav
 		.slider__btn#btnPrew
-			img#btnPrewImg(src="/assets/img/works/work-1.png" alt="test" data-index="")
+			img#btnPrewImg(src="" alt="" data-index="")
 			.slider__btn_top.prew
 				+arrow("#", "svg_white")(class="arrow_down arrow_slider" onclick="event.preventDefault()")
 
 
 		.slider__btn#btnNext
-			img#btnNextImg(src="/assets/img/works/work-3.png" alt="test" data-index="")
+			img#btnNextImg(src="" alt="" data-index="")
 			.slider__btn_top.next
 				+arrow("#", "svg_white")(class="arrow_up arrow_slider" onclick="event.preventDefault()")
