@@ -15,6 +15,7 @@ module.exports = [
 	"./gulp/tasks/sprite.svg.js",
 	"./gulp/tasks/sprite.png.js",
 	"./gulp/tasks/gitpages.js",
-	"./gulp/tasks/js.private.js"
+	"./gulp/tasks/js.private.js",
+	"./gulp/tasks/copy.json.js"
 ];
 

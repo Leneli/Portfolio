@@ -5,26 +5,24 @@ mixin button(arowDirection, btnClass)
 
 
 //- Slider
-.slider
+.slider#slider
 
 	.slider__picture
-		img(src="/assets/img/works/work-2.png" alt="test")
+		img#display(src="/assets/img/works/work-2.png" alt="test" data-index="")
 
 	.slider__desc
-		h2.subtitle.work__title Сайт школы онлайн образования
-		span.work__tech HTML, CSS, JavaScript
-		a(href="#").work__link Просмотреть сайт
+		h2.subtitle.work__title#header Сайт школы онлайн образования
+		span.work__tech#description HTML, CSS, JavaScript
+		a(href="#").work__link#siteLink Просмотреть сайт
 
 	.slider__nav
-		.slider__btn
-			img(src="/assets/img/works/work-1.png" alt="test")
-			//-+button("", "prew")
+		.slider__btn#btnPrew
+			img#btnPrewImg(src="/assets/img/works/work-1.png" alt="test" data-index="")
 			.slider__btn_top.prew
-				+arrow("#", "svg_white")(class="arrow_down arrow_slider")
+				+arrow("#", "svg_white")(class="arrow_down arrow_slider" onclick="event.preventDefault()")
 
 
-		.slider__btn
-			img(src="/assets/img/works/work-3.png" alt="test")
-			//-+button("arrow_up", "next")
+		.slider__btn#btnNext
+			img#btnNextImg(src="/assets/img/works/work-3.png" alt="test" data-index="")
 			.slider__btn_top.next
-				+arrow("#", "svg_white")(class="arrow_up arrow_slider")
+				+arrow("#", "svg_white")(class="arrow_up arrow_slider" onclick="event.preventDefault()")

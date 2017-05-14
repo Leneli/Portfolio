@@ -31,6 +31,7 @@ $.gulp.task("default", $.gulp.series(
 		"js:private",
 		"copy:image",
 		"copy:fonts",
+		"copy:json",
 		"css:foundation",
 		"sprite:svg",
 		"sprite:png"

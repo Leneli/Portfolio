@@ -7,5 +7,6 @@ module.exports = [
 	"./source/js/mainmenu.js",
 	"./source/js/preloader.js",
 	"./source/js/sidebar.js",
-	"./source/js/webgl.js"
+	"./source/js/webgl.js",
+	"./source/js/slider.js"
 ];

@@ -1,0 +1,27 @@
+[
+	{
+		"title"  : "Work 1",
+		"desc"   : "HTML, CSS, Javascript",
+		"link"   : "#",
+		"image"  : "/assets/img/works/work-1.png",
+		"preview": "/assets/img/works/small-work-1.jpg"
+	}, {
+		"title"  : "Work 2",
+		"desc"   : "HTML, CSS",
+		"link"   : "#",
+		"image"  : "/assets/img/works/work-2.png",
+		"preview": "/assets/img/works/small-work-2.jpg"
+	}, {
+		"title"  : "Work 3",
+		"desc"   : "HTML, CSS, jQuery",
+		"link"   : "#",
+		"image"  : "/assets/img/works/work-3.png",
+		"preview": "/assets/img/works/small-work-3.jpg"
+	}, {
+		"title"  : "Work 4",
+		"desc"   : "HTML, CSS, Ajax",
+		"link"   : "#",
+		"image"  : "/assets/img/works/work-4.png",
+		"preview": "/assets/img/works/small-work-4.jpg"
+	}
+]

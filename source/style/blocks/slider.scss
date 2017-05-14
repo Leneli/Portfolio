@@ -95,11 +95,11 @@ $nav-height: 225px;
 //colors for buttons
 .prew {
 	background-color: rgba($color-bg8, 0.7);
-
+	
 	&:hover { 
 		& > *[class^=arrow] {
 			transform: translateY(50px);
-			transition: 1s;
+			transition: .5s;
 		}
 	}
 }
@@ -111,7 +111,7 @@ $nav-height: 225px;
 		& > *[class^=arrow] {
 			transform: translateY(-50px)
 						rotate(-180deg);
-			transition: 1s;
+			transition: .5s;
 		}
 	}
 }
