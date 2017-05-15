@@ -21,9 +21,6 @@ forElement(slider).then(function() {
 
 			this.duration = 1000;
 
-			//let duration = 500,
-	    	//	flag = true;
-
 			this.display.addEventListener("click", function() {
 				Slider.animate({
 					duration: 3000,
