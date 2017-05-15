@@ -1,6 +1,7 @@
 //Parallax
-window.onload = function() {
-	let layers = document.getElementsByClassName("parallax__layer"),
+(function() {
+	document.addEventListener("DOMContentLoaded", function() {
+			let layers = document.getElementsByClassName("parallax__layer"),
 	parallax;
 
 	let moveLaers = function(e) {
@@ -24,4 +25,6 @@ window.onload = function() {
 	};
 
 	window.addEventListener("mousemove", moveLaers);
-};
+	});
+})();
+
