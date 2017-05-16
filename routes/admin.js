@@ -4,10 +4,13 @@ const formidable = require('formidable');
 const fs = require('fs');
 const path = require('path');
 const config = require('../config.json');
+const content = require('../content.json');
+
 
 router.get('/', function (req, res) {
   let obj = {
-    title: 'Admin page'
+    title: 'Admin page',
+    "metaData": content.metaData
   };
   Object.assign(obj, req.app.locals.settings);
   res.render('pages/admin', obj);

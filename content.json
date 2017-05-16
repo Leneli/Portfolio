@@ -64,29 +64,29 @@
 	"menu" : [
 		{
 			"name": "Мои работы",
-			"href": "/works.html"
+			"href": "/works"
 		}, {
 			"name": "Обо мне",
-			"href": "/about.html"
+			"href": "/about"
 		}, {
 			"name": "Блог",
-			"href": "/blog.html"
+			"href": "/blog"
 		}, {
 			"name": "Авторизация",
-			"href": "/index.html"
+			"href": "/"
 		}
 	],
 
     "menuIndex" : [
 		{
 			"name": "Мои работы",
-			"href": "/works.html"
+			"href": "/works"
 		}, {
 			"name": "Обо мне",
-			"href": "/about.html"
+			"href": "/about"
 		}, {
 			"name": "Блог",
-			"href": "/blog.html"
+			"href": "/blog"
 		}
 	],
 
