@@ -1,20 +1,30 @@
 "use strict";
 
 global.$ = {
-	package: require("./package.json"),
-	config: require("./gulp/config"),
+	dev: true,
+	package: require('./package.json'),
+	config: require('./gulp/config'),
 	path: {
-		task: require("./gulp/paths/tasks.js"),
-		jsFoundation: require("./gulp/paths/js.foundation.js"),
-		cssFoundation: require("./gulp/paths/css.foundation.js"),
-		app: require("./gulp/paths/app.js")
+		task: require('./gulp/paths/tasks.js'),
+		jsFoundation: require('./gulp/paths/js.foundation.js'),
+		cssFoundation: require('./gulp/paths/css.foundation.js'),
+		app: require('./gulp/paths/app.js')
 	},
-	gulp: require("gulp"),
-	del: require("del"),
-	browserSync: require("browser-sync").create(),
-	gp: require("gulp-load-plugins")(),
+	gulp: require('gulp'),
+	del: require('del'),
 	sassGlob: require("gulp-sass-glob"),
-    cssunit: require("gulp-css-unit")
+	merge: require('merge-stream'),
+	browserify: require('browserify'),
+	source: require('vinyl-source-stream'),
+	buffer: require('vinyl-buffer'),
+	babel: require('babelify'),
+	browserSync: require('browser-sync').create(),
+	fs: require('fs'),
+	gp: require('gulp-load-plugins')({
+		rename: {
+			'gulp-replace-task': 'replaceTask'
+		}
+	})
 };
 
 $.path.task.forEach(function(taskPath) {
@@ -25,7 +35,7 @@ $.gulp.task("default", $.gulp.series(
 	"clean",
 	$.gulp.parallel(
 		"sass",
-		"pug",
+		//"pug",
 		"js:foundation",
 		"js:process",
 		"js:private",
@@ -33,9 +43,11 @@ $.gulp.task("default", $.gulp.series(
 		"copy:fonts",
 		"copy:json",
 		"css:foundation",
+		"create:version",
 		"sprite:svg",
 		"sprite:png"
 	),
+	"nodemon",
 	$.gulp.parallel(
 		"watch",
 		"serve"

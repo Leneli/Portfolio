@@ -1,0 +1,28 @@
+mixin button(arowDirection, btnClass)
+	div(class=`slider__btn_top ${btnClass}`)
+		div(class=`slider_arrow ${arowDirection}`)
+			+svgIcon("arrow_down", "svg_white", "0 0 25.18 16.164")
+
+
+//- Slider
+.slider#slider
+
+	.slider__picture
+		img#display(src="" alt="" data-index="")
+
+	.slider__desc
+		h2.subtitle.work__title#header
+		span.work__tech#description
+		a(href="#").work__link#siteLink Просмотреть сайт
+
+	.slider__nav
+		.slider__btn#btnPrew
+			img#btnPrewImg(src="" alt="" data-index="")
+			.slider__btn_top.prew
+				+arrow("#", "svg_white")(class="arrow_down arrow_slider" onclick="event.preventDefault()")
+
+
+		.slider__btn#btnNext
+			img#btnNextImg(src="" alt="" data-index="")
+			.slider__btn_top.next
+				+arrow("#", "svg_white")(class="arrow_up arrow_slider" onclick="event.preventDefault()")

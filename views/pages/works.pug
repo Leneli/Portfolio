@@ -1,0 +1,28 @@
+extends ../_page
+
+block variables
+	- var title = "Works"
+	- var leftTraingleClass = "traingle_works"
+	- var rightTraingleClass = "traingle_works"
+
+
+
+block content
+	section.section-bg_works
+		h1.title_works Мои работы
+
+
+	include ../blocks/slider
+
+
+	section
+		h1.title_speak Что обо мне говорят
+
+		include ../blocks/quotes
+
+		section.section_contacts-me
+			+formContactMe()
+
+
+block picture
+	include ../blocks/parallax

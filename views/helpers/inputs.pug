@@ -1,0 +1,6 @@
+mixin check(type, name, id, text)
+	label
+		input(class=`${type}` type=`${type}` name=`${name}` id=`${id}`)
+		span(class=`${type}-custom`)
+		if text
+			span.label #{text}

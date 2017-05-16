@@ -1,0 +1,6 @@
+mixin skills(skillsGroup)
+	ul.skills
+		each i in skillsGroup
+			li.skills__item
+				span.skills__name= i.name
+				+skill(i.value)

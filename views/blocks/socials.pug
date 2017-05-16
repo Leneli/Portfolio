@@ -1,0 +1,8 @@
+include ../helpers/svg-icon
+
+mixin socials(links, svgClass)
+	ul.socials
+		each i in links
+			li.socials__item
+				a(href=`${i.href}` target="_blank" class=`socials__link socials__link_${i.name}`)
+					+svgIcon(i.name, svgClass, "0 0 31 22")
