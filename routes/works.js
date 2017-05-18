@@ -2,13 +2,21 @@ const express = require('express');
 const router = express.Router();
 const nodemailer = require('nodemailer');
 const config = require('../config.json');
+const content = require('../content.json');
 
-router.get('/', function (req, res) {
-  let obj = {
-    title: 'Связаться со мной'
-  };
-  Object.assign(obj, req.app.locals.settings);
-  res.render('pages/contact', obj);
+router.get("/", function (req, res) {
+	let obj = {
+		"title": "Мои работы",
+		"metaData": content.metaData,
+		"socials" : content.socials,
+		"menu": content.menu,
+		"leftTraingleClass": "traingle_works",
+		"rightTraingleClass": "traingle_works",
+		"headerClass": "bg_forest-full",
+		"headerSubClass": "header__content_about"
+	};
+	Object.assign(obj, req.app.locals.settings);
+	res.render("pages/works", obj);
 });
 
 router.post('/', function (req, res) {

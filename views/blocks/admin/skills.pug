@@ -1,0 +1,27 @@
+mixin skillsList(skillsGroup)
+	ul.adm-skills__list
+		each i in skillsGroup
+			li.adm-skills__li
+				label #{i.name}
+				span.adm-input__percent
+					input.adm-input__number(type="number" min="0" max="100" value=`${i.value}`)
+
+
+div
+	h2 Навыки
+
+	.adm-body_skills
+		div.adm-skills
+			p.text-bold Frontend
+			+skillsList(Frontend)
+
+		div.adm-skills
+			p.text-bold Backend
+			+skillsList(Backend)
+
+		div.adm-skills
+			p.text-bold Workflow
+			+skillsList(WorkFlow)
+
+	footer.adm-footer
+		button.adm-input_btn Сохранить

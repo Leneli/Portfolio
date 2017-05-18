@@ -2,7 +2,9 @@
 (function () {
 	document.addEventListener("DOMContentLoaded", function () {
 		let layers = document.getElementsByClassName("parallax__layer"),
-			parallax;
+			parallax = document.getElementById("parallax"),
+			wrapper = document.getElementsByClassName("wrapper")[0],
+			noParallax = document.createElement("div");
 
 		let moveLaers = function (e) {
 			e = e || event;
@@ -24,6 +26,13 @@
 			}
 		};
 
-		window.addEventListener("mousemove", moveLaers);
+		if(isMobile.any()) {
+			wrapper.removeChild(parallax);
+			noParallax.className = "parallax bg_forest-bottom";
+			wrapper.insertBefore(noParallax, document.getElementsByClassName("footer")[0]);
+
+		} else {
+			window.addEventListener("mousemove", moveLaers);
+		}
 	});
 })();

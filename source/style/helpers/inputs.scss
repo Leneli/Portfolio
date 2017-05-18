@@ -73,6 +73,26 @@ $input-height: 45px;
 }
 
 
+//Warning
+.input_warning {
+	box-shadow: 0 0 3px 2px rgba($color-warning, .7);
+	background: rgba($color-warning, .1);
+	color: $color-warning;
+}
+
+
+//button "Download picture"
+.add-pic {
+	margin: 10px 0;
+	//color: $color-buttons;
+	&::after {
+		content: "";
+		display: inline-block;
+		background: url("/assets/img/icons-png/add-pic.png") 0 0 no-repeat;
+	}
+}
+
+
 //checkbox and radio
 $size: 20px;
 $bg: $color-white;

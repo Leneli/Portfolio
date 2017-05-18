@@ -9,8 +9,11 @@ const content = require('../content.json');
 
 router.get('/', function (req, res) {
   let obj = {
-    title: 'Admin page',
-    "metaData": content.metaData
+    title: 'Панель администрирования',
+    "metaData": content.metaData,
+    "Frontend": content.Frontend,
+		"Backend": content.Backend,
+		"WorkFlow": content.WorkFlow
   };
   Object.assign(obj, req.app.locals.settings);
   res.render('pages/admin', obj);

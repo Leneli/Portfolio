@@ -14,22 +14,6 @@ router.get("/", function (req, res) {
 	res.render("pages/index", obj);
 });
 
-// WORKS
-router.get("/works", function (req, res) {
-	let obj = {
-		"title": "Мои работы",
-		"metaData": content.metaData,
-		"socials" : content.socials,
-		"menu": content.menu,
-		"leftTraingleClass": "traingle_works",
-		"rightTraingleClass": "traingle_works",
-		"headerClass": "bg_forest-full",
-		"headerSubClass": "header__content_about"
-	};
-	Object.assign(obj, req.app.locals.settings);
-	res.render("pages/works", obj);
-});
-
 // ABOUT
 router.get("/about", function (req, res) {
 	let obj = {

@@ -42,6 +42,11 @@ $padd: 20px;
 .form__btn {
 	flex-grow: 1;
 	line-height: $btn-height;
+	padding: 0;
+	margin: 0;
+	background: none;
+	border: none;
+	outline: none;
 	color: $color-white;
 	@include font("Roboto-Medium");
 	text-align: center;
@@ -51,6 +56,12 @@ $padd: 20px;
 	&:not(:last-child) {border-right: 2px solid rgba($color-white, .5);}
 
 	&:hover {background: rgba($color-accents, .85);}
+
+	&:disabled {
+		color: $color-skill-first;
+		background: rgba($color-bg8, .7);
+		cursor: wait;
+	}
 }
 
 .form__input {

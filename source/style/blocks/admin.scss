@@ -1,0 +1,198 @@
+//main
+.admin {
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	align-content: stretch;
+	color: $color-font-main;
+}
+.admin-bg {
+	background-color: rgba($color-white, 0.85);
+}
+
+//header
+.admin-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	min-height: 80px;
+	padding: 0 $admin-paddings;
+	background: $color-buttons;
+	color: $color-white; 
+
+	@include phones {
+		flex-direction: column-reverse;
+		padding: $admin-paddings-phone;
+	}
+}
+
+.admin__logo {
+	font-size: 28px;
+
+	@include tablets {
+		font-size: 21px;
+	}
+
+	@include phones {
+		font-size: 18px;
+		padding-top: $admin-paddings-phone;
+		text-align: center;
+	}
+}
+
+.admin__toSite,
+.admin__toSite:visited,
+.admin__toSite:active {
+	font-size: 16px;
+	text-decoration: underline;
+	opacity: 0.7;
+	color: $color-white;
+
+	@include phones {
+		font-size: 14px;
+	}
+}
+.admin__toSite:hover {
+	text-decoration: none;
+}
+
+
+//content
+.tabs__content {
+	display: flex;
+}
+.adm-content {
+	flex: 1 1 100%;
+	& > div {
+		display: flex;
+		height: 100%;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+	
+}
+
+.adm-body {
+	display: flex;
+	flex-grow: 1;
+}
+
+//SKILLS
+.adm-body_skills {
+	@extend .adm-body;
+	margin-left: -80px;
+	flex-wrap: wrap;
+}
+.adm-skills {
+	width: 280px;
+	margin-top: 30px;
+	margin-left: 80px;
+
+	@include tablets {
+		width: 100%;
+	}
+
+	@include phones {
+		margin-top: 30px;
+	}
+}
+
+.adm-skills__list {
+	padding: 20px;
+}
+.adm-skills__li {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 50px;
+}
+
+//BLOG
+.adm-blog {
+	margin-top: 30px;
+	width: 100%;
+
+	@include phones { margin-top: 20px; }
+}
+
+
+//Footer
+.adm-footer {}
+
+
+//INPUTS & FORM
+%admInput {
+	border-radius: 4px;
+	border: none;
+
+	&:focus {
+		outline: none;
+		box-shadow: 0 0 3px 2px rgba($color-substrt, .7);
+	}
+}
+
+.adm-form {
+	display: flex;
+	width: 100%;
+	flex-direction: column;
+}
+
+
+.adm-input__text {
+	@extend %admInput;
+	width: 300px;
+	height: 32px;
+	padding: 18px;
+	margin: 5px 0;
+
+	@include phones { width: 100%; }
+}
+
+.adm-input__number {
+	@extend %admInput;
+	width: 46px;
+	height: 32px;
+	text-align: center;
+}
+
+.adm-input__percent {
+	&::after {
+		content: "%";
+		display: inline-block;
+		padding-left: 11px;
+	}
+}
+
+.adm-input__textarea {
+	@extend %admInput;
+	width: 500px;
+	height: 166px;
+	padding: 18px;
+	margin: 5px 0;
+
+	@include tablets {
+		height: 300px;
+		width: 100%;
+	}
+}
+
+.adm-input_btn {
+	@extend %admInput;
+	padding: 15px 20px;
+	background: $color-buttons;
+	color: $color-white;
+	cursor: pointer;
+
+	&:not(:last-child) { margin-right: 15px; }
+
+	&:hover {
+		background: $color-accents;
+	}
+
+	&:disabled {
+		background: $color-bg8;
+		opacity: .8;
+		cursor: wait;
+	}
+}

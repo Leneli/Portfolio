@@ -29,7 +29,7 @@ app.use(express.static(path.join(__dirname, currentStatic)));
 
 app.use("/", require("./routes/index"));
 app.use("/admin", require("./routes/admin"));
-//app.use("/contact", require("./routes/mail"));
+app.use("/works", require("./routes/works"));
 //app.use("/login", require("./routes/login"));
 
 

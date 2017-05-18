@@ -30,10 +30,12 @@ mixin formContactMe()
 	.form.form-contactMe
 		.form__content
 			span.subtitle Связаться со мной
-			form.login-form
-				input.input.input_padding(value="Test")
-				input.input.input_padding
-				textarea.textarea.input_padding
+
+			form.login-form#mail(action="contact" method="POST")
+				.status
+				input.input.input_padding(name="name" placeholder="Имя" )
+				input.input.input_padding(name="email" placeholder="Email" required)
+				textarea.textarea.input_padding(name="text" placeholder="Ваше сообщение" required)
 		.form__buttons
-			a.form__btn Отправить
-			a.form__btn Очистить
+			button.form__btn(form="mail" type="submit") Отправить
+			button.form__btn(form="mail" type="reset") Очистить
