@@ -61,19 +61,21 @@
 		}
 
 		//добавить запись в блог
-		/*var formBlog = document.getElementById("formBlog");
+		const formBlog = document.querySelector('#formBlog');
 
-		formBlog.addEventListener("submit", sendPost);
+		formBlog.addEventListener('submit', prepareSendPost);
 
-		function sendPost(e) {
+		function prepareSendPost(e) {
 			e.preventDefault();
 			let data = {
 				title: formBlog.title.value,
 				date: formBlog.date.value,
 				text: formBlog.text.value
 			};
-			console.log(data);
-		}*/
+			prepareSend('/admin/addpost', formBlog, data);
+		};
+
+
 	});
 })();
 
@@ -82,11 +84,39 @@
 var upload = function (url, data, cb) {
 	let xhr = new XMLHttpRequest();
 	xhr.open('POST', url, true);
-
 	xhr.onload = function (e) {
 		let result = JSON.parse(xhr.responseText);
 		cb(result.status);
 	};
-
 	xhr.send(data);
-}
+};
+
+//Ajax
+var sendAjax = function(url, data, cb) {
+  let xhr = new XMLHttpRequest();
+  xhr.open('POST', url, true);
+  xhr.setRequestHeader('Content-Type', 'application/json');
+  xhr.onload = function (e) {
+    let result;
+    try {
+      result = JSON.parse(xhr.responseText);
+    } catch (e) {
+      cb('Извините в данных ошибка');
+    }
+    cb(result.status);
+  };
+  xhr.send(JSON.stringify(data));
+};
+
+//prepareSend
+var prepareSend = function(url, form, data, cb) {
+  let resultContainer = form.querySelector('.status');
+  resultContainer.innerHTML = 'Sending...';
+  sendAjax(url, data, function (data) {
+    form.reset();
+    resultContainer.innerHTML = data;
+    if (cb) {
+      cb(data);
+    }
+  });
+};

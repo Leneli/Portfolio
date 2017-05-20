@@ -19,8 +19,9 @@ const config = require("./config");
 const uploadDir = path.join(__dirname, config.upload);
 
 //подключаем базу данных
-/*mongoose.Promise = global.Promise;
-mongoose
+mongoose.Promise = global.Promise;
+mongoose.connect("mongodb://root:iZ6CUI3B@ds151049.mlab.com:51049/portfolio");
+/*mongoose
 	.connect(`mongodb://${config.db.host}:${config.db.port}/${config.db.name}`, {
 		user: config.db.user,
 		pass: config.db.password
@@ -28,13 +29,14 @@ mongoose
 	.catch(e => {
 		console.error(e);
 		throw e;
-	});
+	});*/
 
 require("./models/db-close");
 //подключаем модели(сущности, описывающие коллекции базы данных)
 require("./models/blog");
-require("./models/pic");*/
+require("./models/pic");
 
+//подключение движка
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");

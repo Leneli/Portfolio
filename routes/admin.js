@@ -44,12 +44,12 @@ router.post("/upload", function (req, res) {
 
 //отправить сообщение в блог
 router.post("/addpost", (req, res) => {
-    //требуем наличия заголовка, даты и текста
+    //требуется наличия заголовка, даты и текста
     if (!req.body.title || !req.body.date || !req.body.text) {
         //если что-либо не указано - сообщаем об этом
         return res.json({ status: "Укажите данные!" });
     }
-    //создаем новую запись блога и передаем в нее поля из формы
+    //создается новыя запись блога
     const Model = mongoose.model("blog");
     let item = new Model({ title: req.body.title, date: new Date(req.body.date), body: req.body.text });
     item.save().then(
@@ -62,7 +62,6 @@ router.post("/addpost", (req, res) => {
                 .keys(e.errors)
                 .map(key => e.errors[key].message)
                 .join(", ");
-
             //обрабатываем шаблон и отправляем его в браузер
             res.json({
                 status: "При добавление записи произошла ошибка: " + error

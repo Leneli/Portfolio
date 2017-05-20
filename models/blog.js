@@ -17,5 +17,5 @@ const mongoose = require("mongoose"),
 			required: [true, "Укажите дату публикации"]
 		}
 	});
-
+//сохранить модель для ее дальнейшего использования
 mongoose.model("blog", BlogSchema);
