@@ -32,12 +32,26 @@ router.post("/upload", function (req, res) {
 			fs.unlink(files.photo.path);
 			return res.json({ status: "Не указано описание картинки!" });
 		}
+		//если ошибок нет, то создаем новую picture и передаем в нее поле из формы
+		const Model = mongoose.model("pic");
+
 		fs.rename(files.photo.path, path.join(config.upload, files.photo.name), function (err) {
 			if (err) {
 				fs.unlink(path.join(config.upload, files.photo.name));
 				fs.rename(files.photo.path, files.photo.name);
 			}
-			res.json({ status: "Картинка успешно загружена" });
+
+			let dir = config
+				.upload
+				.substr(config.upload.indexOf("/"));
+
+			const item = new Model({name: fields.name, picture: path.join(dir, files.photo.name)});
+			item
+				.save()
+				.then(
+					i => res.json({status: "Картинка успешно загружена"}),
+					e => res.json({status: e.message})
+				);
 		});
 	});
 });

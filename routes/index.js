@@ -55,7 +55,6 @@ router.get("/blog", function (req, res) {
 			Object.assign(obj, {items: items});
 			res.render("pages/blog", obj);
 		});
-	
 });
 
 module.exports = router;
