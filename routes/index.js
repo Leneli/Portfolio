@@ -47,7 +47,15 @@ router.get("/blog", function (req, res) {
 		"headerSubClass": "header__content_blog"
 	};
 	Object.assign(obj, req.app.locals.settings);
-	res.render("pages/blog", obj);
+
+	const Model = mongoose.model("blog");
+	Model
+		.find()
+		.then(items => {
+			Object.assign(obj, {items: items});
+			res.render("pages/blog", obj);
+		});
+	
 });
 
 module.exports = router;
