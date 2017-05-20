@@ -1,4 +1,6 @@
 //Admin panel
+'use strict';
+
 (function() {
 	document.addEventListener("DOMContentLoaded", function() {
 
@@ -30,5 +32,21 @@
 			}
 			activeTab.classList.add(tabActiveClass);
 		});
+
+
+		//добавить запись в блог
+		var formBlog = document.getElementById("formBlog");
+
+		formBlog.addEventListener("submit", sendPost);
+
+		function sendPost(e) {
+			e.preventDefault();
+			let data = {
+				title: formBlog.title.value,
+				date: formBlog.date.value,
+				text: formBlog.text.value
+			};
+			console.log(data);
+		}
 	});
 })();

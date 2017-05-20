@@ -1,4 +1,5 @@
 const express = require("express");
+const mongoose = require("mongoose");
 const path = require("path");
 const fs = require("fs");
 const http = require("http");
@@ -13,16 +14,34 @@ const jsonfile = require("jsonfile");
 const fileVersionControl = "version.json";
 const currentStatic = require("./gulp/config").root;
 const config = require("./config");
-// получаем абсолютный путь к папке upload, в которую будут загружаться картинки
-// проектов
+
+// получаем абсолютный путь к папке upload, в которую будут загружаться картинки проектов
 const uploadDir = path.join(__dirname, config.upload);
+
+//подключаем базу данных
+mongoose.Promise = global.Promise;
+mongoose
+	.connect(`mongodb://${config.db.host}:${config.db.port}/${config.db.name}`, {
+		user: config.db.user,
+		pass: config.db.password
+	})
+	.catch(e => {
+		console.error(e);
+		throw e;
+	});
+
+require("./models/db-close");
+//подключаем модели(сущности, описывающие коллекции базы данных)
+require("./models/blog");
+require("./models/pic");
+
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
 
 app.use(logger("dev"));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, currentStatic)));
 

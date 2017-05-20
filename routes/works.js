@@ -1,4 +1,5 @@
 const express = require('express');
+const mongoose = require("mongoose");
 const router = express.Router();
 const nodemailer = require('nodemailer');
 const config = require('../config.json');
@@ -19,7 +20,7 @@ router.get("/", function (req, res) {
 	res.render("pages/works", obj);
 });
 
-router.post('/', function (req, res) {
+/*router.post('/', function (req, res) {
     //требуем наличия имени, обратной почты и текста
   if (!req.body.name || !req.body.email || !req.body.text) {
     //если что-либо не указано - сообщаем об этом
@@ -45,6 +46,6 @@ router.post('/', function (req, res) {
     }
     res.json({status: 'Письмо успешно отправлено'});
   });
-});
+});*/
 
 module.exports = router;

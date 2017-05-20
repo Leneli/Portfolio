@@ -96,3 +96,10 @@ $padd: 20px;
 	@extend .form_light;
 	height: 460px;
 }
+
+//Status
+.status {
+	font-size: 13px;
+	color: $color-bg9;
+	font-style: italic;
+}

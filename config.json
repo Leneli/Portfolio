@@ -1,5 +1,14 @@
 {
+	"db": {
+		"host": "localhost",
+		"port": "27017",
+		"name": "pf",
+		"user": "",
+		"password": ""
+	},
+
 	"upload": "public/upload",
+
 	"mail": {
 		"subject": "Сообщение с сайта-портфолио",
 		"smtp": {
@@ -7,8 +16,8 @@
 			"port": 465,
 			"secure": true,
 			"auth": {
-				"user": "liafell.lansera@gmail.com",
-				"pass": "12MOR13win"
+				"user": "",
+				"pass": ""
 			}
 		}
 	}
