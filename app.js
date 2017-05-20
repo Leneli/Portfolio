@@ -9,6 +9,8 @@ const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const app = express();
 const server = http.createServer(app);
+const session = require("express-session");
+const MongoStore = require("connect-mongo")(session);
 
 const jsonfile = require("jsonfile");
 const fileVersionControl = "version.json";
@@ -35,6 +37,7 @@ require("./models/db-close");
 //подключаем модели(сущности, описывающие коллекции базы данных)
 require("./models/blog");
 require("./models/pic");
+require("./models/user");
 
 //подключение движка
 // view engine setup
@@ -45,13 +48,27 @@ app.use(logger("dev"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+//куки
+app.use(session({
+	secret: "secret",
+	key: "keys",
+	cookie: {
+		path: "/",
+		httpOnly: true,
+		maxAge: null
+	},
+	saveUninitialized: false,
+	resave: false,
+	store: new MongoStore({ mongooseConnection: mongoose.connection })
+}));
+//статика
 app.use(express.static(path.join(__dirname, currentStatic)));
 
-
+//роуты страниц
 app.use("/", require("./routes/index"));
 app.use("/admin", require("./routes/admin"));
 app.use("/works", require("./routes/works"));
-//app.use("/login", require("./routes/login"));
+app.use("/login", require("./routes/login"));
 
 
 // 404 catch-all handler (middleware)

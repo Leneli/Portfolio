@@ -11,11 +11,12 @@ mixin formLogin(className)
 	div(class=`form form_dark ${className}`)
 		.form__content
 			span.subtitle Авторизуйтесь
-			form.login-form
+			form.login-form#loginForm(action="login" method="POST")
+				.status
 				.input.input_login
-					input(type="text" placeholder="Логин").input_hidden
+					input(name="login" type="text" placeholder="Логин").input_hidden
 				.input.input_passw
-					input(type="password" placeholder="Пароль").input_hidden
+					input(name="password" type="password" placeholder="Пароль").input_hidden
 				+check("checkbox", "checkbox-name", "id1", "Я человек")
 				p Вы точно не робот?
 				div.form__captcha_radio
@@ -23,7 +24,7 @@ mixin formLogin(className)
 					+check("radio", "radio-name", "id3", "Не уверен")
 		.form__buttons
 			a(class="form__btn" href="/") На главную
-			a.form__btn Войти
+			input(name="" form="loginForm" type="submit" value="Войти").form__btn
 
 
 mixin formContactMe()

@@ -7,8 +7,16 @@ const path = require("path");
 const config = require("../config.json");
 const content = require("../content.json");
 
+//проверить, есть ли в сессии текущего пользователя пометка о том, что он является администратором
+const isAdmin = (req, res, next) => {
+	if(req.session.isAdmin) {
+		return next();
+	}
+	//если нет, то перебросить пользователя на главную страницу сайта
+	res.redirect("/");
+};
 
-router.get("/", function (req, res) {
+router.get("/", isAdmin, function (req, res) {
 	let obj = {
 		title: "Панель администрирования",
 		"metaData": content.metaData,
@@ -21,7 +29,7 @@ router.get("/", function (req, res) {
 });
 
 //Загрузить картинку
-router.post("/upload", function (req, res) {
+router.post("/upload", isAdmin, function (req, res) {
 	let form = new formidable.IncomingForm();
 	form.uploadDir = path.join(process.cwd(), config.upload);
 	form.parse(req, function (err, fields, files) {
@@ -57,7 +65,7 @@ router.post("/upload", function (req, res) {
 });
 
 //отправить сообщение в блог
-router.post("/addpost", (req, res) => {
+router.post("/addpost", isAdmin, (req, res) => {
     //требуется наличия заголовка, даты и текста
     if (!req.body.title || !req.body.date || !req.body.text) {
         //если что-либо не указано - сообщаем об этом

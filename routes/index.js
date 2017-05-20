@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const router = express.Router();
 const content = require('../content.json');
 
-
+// Index page
 router.get("/", function (req, res) {
 	let obj = {
 		"title": "Добро пожаловать на сайт веб-разработчика",
