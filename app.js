@@ -19,7 +19,7 @@ const config = require("./config");
 const uploadDir = path.join(__dirname, config.upload);
 
 //подключаем базу данных
-mongoose.Promise = global.Promise;
+/*mongoose.Promise = global.Promise;
 mongoose
 	.connect(`mongodb://${config.db.host}:${config.db.port}/${config.db.name}`, {
 		user: config.db.user,
@@ -33,7 +33,7 @@ mongoose
 require("./models/db-close");
 //подключаем модели(сущности, описывающие коллекции базы данных)
 require("./models/blog");
-require("./models/pic");
+require("./models/pic");*/
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));

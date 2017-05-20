@@ -33,9 +33,35 @@
 			activeTab.classList.add(tabActiveClass);
 		});
 
+		//загрузка изображений
+		const formUpload = document.querySelector('#upload');
+
+		formUpload.addEventListener('submit', prepareSendFile);
+
+		function prepareSendFile(e) {
+			e.preventDefault();
+			let resultContainer = formUpload.querySelector('.status');
+			let formData = new FormData();
+
+			let file = document
+				.querySelector('#file-select')
+				.files[0];
+			let name = document
+				.querySelector('#file-desc')
+				.value;
+
+			formData.append('photo', file, file.name);
+			formData.append('name', name);
+
+			resultContainer.innerHTML = 'Uploading...';
+			upload('/admin/upload', formData, function (data) {
+				resultContainer.innerHTML = data;
+				formUpload.reset();
+			});
+		}
 
 		//добавить запись в блог
-		var formBlog = document.getElementById("formBlog");
+		/*var formBlog = document.getElementById("formBlog");
 
 		formBlog.addEventListener("submit", sendPost);
 
@@ -47,6 +73,20 @@
 				text: formBlog.text.value
 			};
 			console.log(data);
-		}
+		}*/
 	});
 })();
+
+
+//Upload
+var upload = function (url, data, cb) {
+	let xhr = new XMLHttpRequest();
+	xhr.open('POST', url, true);
+
+	xhr.onload = function (e) {
+		let result = JSON.parse(xhr.responseText);
+		cb(result.status);
+	};
+
+	xhr.send(data);
+}
