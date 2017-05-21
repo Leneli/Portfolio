@@ -9,6 +9,14 @@
 	background-size: cover;
 	color: $color-white;
 	z-index: 999;
+
+	@include tablets {
+		background-image: url("../img/bg/preloader-tablet.jpg");
+	}
+
+	@include phones {
+		background-image: none;
+	}
 }
 
 .preloader__spinnre {

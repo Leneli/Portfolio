@@ -1,0 +1,32 @@
+-
+	var contacts = [
+		{
+			name: "skype",
+			view: "0 0 24 24",
+			val: "live:liafell.lansera"
+		},
+		{
+			name: "envelope2",
+			view: "0 0 23 16.391",
+			val: "liafell.lansera@gmail.com"
+		},
+		{
+			name: "phone2",
+			view: "0 0 16.492 20.947",
+			val: "+7 961 656 16 41"
+		},
+		{
+			name: "map_marker",
+			view: "0 0 15.151 21.654",
+			val: "Россия, г.Волгоград"
+		}
+	]
+
+.contacts
+	h2.subtitle Контакты
+
+	ul.contacts__ul
+		each i in contacts
+			li.contacts__li
+				+svgIcon(i.name, "contacts__icon", i.view)
+				span.contacts__str #{i.val}

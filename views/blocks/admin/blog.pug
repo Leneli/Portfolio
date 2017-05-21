@@ -1,0 +1,23 @@
+div
+	h2 Блог
+
+	.adm-body
+		.adm-blog
+			p.text-bold Добавить запись
+
+			form#formBlog(action="/addpost" method="POST")
+				.status
+				.adm-form
+					input.adm-input__text(type="text" name="title" placeholder="Название")
+					-
+						var data = new Date().toLocaleDateString('ru', { 
+									year: 'numeric', 
+									month: '2-digit', 
+									day: '2-digit'
+									})
+					input.adm-input__text(name="date" type="date" value=`${data}`)
+					textarea.adm-input__textarea(name="text" placeholder="Статья")
+
+	footer.adm-footer
+		button(form="formBlog" type="submit").adm-input_btn Добавить
+		button(form="formBlog" type="reset").adm-input_btn Очистить

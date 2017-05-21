@@ -18,6 +18,11 @@ forElement(slider).then(function() {
 			this.btnNextImg = document.getElementById("btnNextImg");
 			
 			this.works = [];
+			
+			this.addData();
+
+			//заполнить слайдер первоначальными данными
+			Slider.clicking(0, (this.works.length - 1), 1);
 
 			this.duration = 1000;
 
@@ -33,7 +38,7 @@ forElement(slider).then(function() {
 			});
 
 			//Ajax
-			this.data("/assets/json/slider.json")
+			/*this.data("/assets/json/slider.json")
 				.then(function(dataArray) {
 					for(let i = 0; i < dataArray.length; i++) {
 						Slider.works.push(dataArray[i]);
@@ -44,7 +49,7 @@ forElement(slider).then(function() {
 				})
 				.catch(function(status) {
 					console.error("Код ответа: ", status);
-				});
+				});*/
 
 
 			//Events
@@ -70,8 +75,24 @@ forElement(slider).then(function() {
 				Slider.addAnimate(indexes[0], indexes[1], indexes[2]);
 			});
 		},
+
+		addData() {
+			let dataList = slider.querySelector(".slider__data");
+
+			for(let i = 0; i < dataList.children.length; i++) {
+				let li = {
+					title: dataList.children[i].dataset.name,
+					desc: dataList.children[i].dataset.tech,
+					image: dataList.children[i].dataset.url,
+					preview: dataList.children[i].dataset.url,
+					link: dataList.children[i].dataset.link,
+					index: i
+				}
+				Slider.works.push(li);
+			}
+		},
 		
-		data(url) {
+		/*data(url) {
 			return new Promise(function(resolve, reject) {
 				let xhr = new XMLHttpRequest();
 				xhr.open("GET", url, true);
@@ -86,7 +107,7 @@ forElement(slider).then(function() {
 					}
 				};
 			});
-		},
+		},*/
 
 		addTextBlock(index) {
 			this.header.innerText = this.works[index].title;

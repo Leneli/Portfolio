@@ -1,0 +1,18 @@
+div
+	h2 Мои работы
+
+	.adm-body
+		.adm-blog
+			p.text-bold Добавить запись
+
+			form#works(action='/upload' method="POST" enctype="multipart/form-data")
+				.status
+				.adm-form
+					input.adm-input__text#workName(name="name" type="text" placeholder="Название проекта")
+					input.adm-input__text#workDesk(name="tech" type="text" placeholder="Технологии")
+					input.adm-input__text#workLink(name="link" type="text" placeholder="Ссылка на работу")
+					input.add-pic#workScn(name="photo" type="file" accept="image/*" title="Загрузить скриншот работы")
+
+	footer.adm-footer
+		input.adm-input_btn(name="" form="works" type="submit" value="Добавить")
+		input.adm-input_btn(name="" form="works" type="reset" value="Очистить")

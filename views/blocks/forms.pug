@@ -1,0 +1,42 @@
+mixin formIndex(className)
+	div(class=`form form_dark ${className}`)
+		.form__content
+			include ../blocks/user-head
+			.socials_topm 
+				+socials(socials, "svg_white-green-opacity")
+		+menu(menu, "form__btn", "form__buttons")
+
+
+mixin formLogin(className)
+	div(class=`form form_dark ${className}`)
+		.form__content
+			span.subtitle Авторизуйтесь
+			form.login-form#loginForm(action="login" method="POST")
+				.status
+				.input.input_login
+					input(name="login" type="text" placeholder="Логин").input_hidden
+				.input.input_passw
+					input(name="password" type="password" placeholder="Пароль").input_hidden
+				+check("checkbox", "checkbox-name", "id1", "Я человек")
+				p Вы точно не робот?
+				div.form__captcha_radio
+					+check("radio", "radio-name", "id2", "Да")
+					+check("radio", "radio-name", "id3", "Не уверен")
+		.form__buttons
+			a(class="form__btn" href="/") На главную
+			input(name="" form="loginForm" type="submit" value="Войти").form__btn
+
+
+mixin formContactMe()
+	.form.form-contactMe
+		.form__content
+			span.subtitle Связаться со мной
+
+			form.login-form#mail(action="contact" method="POST")
+				.status
+				input.input.input_padding(name="name" placeholder="Имя" )
+				input.input.input_padding(name="email" placeholder="Email" required)
+				textarea.textarea.input_padding(name="text" placeholder="Ваше сообщение" required)
+		.form__buttons
+			button.form__btn(form="mail" type="submit") Отправить
+			button.form__btn(form="mail" type="reset") Очистить

@@ -1,0 +1,35 @@
+extends ../_page
+
+
+block header-nav
+
+block header-content
+	+userpic("img_circle")
+	h1.title_blog Блог
+	span.user__desc_blog Статьи, которые я написала
+
+block content
+	.blog#blog
+
+		aside.sidebar
+			nav.sidebar-nav
+
+				each art in items
+					span.sidebar__link= art.title
+
+			.sidebar__btn#btn
+
+		section.blog__content
+			
+			each art in items
+				article.article
+					h2.article__name= art.title
+					-
+						var date = new Date(art.date).toLocaleDateString("ru", {
+							year: 'numeric', 
+							month: '2-digit', 
+							day: '2-digit'
+						})
+					time.article__date= date
+					.article__text
+						p= art.body

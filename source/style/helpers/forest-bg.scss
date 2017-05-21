@@ -4,12 +4,21 @@
 	background-image: url(../img/bg/forest.png);
 	background-size: cover;
 	background-repeat: no-repeat;
+	background-attachment: fixed;
 	color: $color-white;
+
+	@include tablets {
+		background-image: url(../img/bg/forest-tablet.png);
+	}
+
+	@include phones {
+		background-image: url(../img/bg/forest-phone.png);
+	}
 }
 
 .bg_forest-bottom {
-	background-image: url(../img/bg/forest2.png);
+	background-image: url(../img/bg/forest-bottom-phone.png);
 	background-position: bottom center;
-	background-size: 100% auto;
+	background-size: 100% 200vh;
 	background-repeat: no-repeat;
 }

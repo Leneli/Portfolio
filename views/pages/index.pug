@@ -1,0 +1,36 @@
+//-include mixins
+include ../helpers/userpic
+include ../helpers/svg-icon
+include ../helpers/inputs
+include ../blocks/meta
+include ../blocks/socials
+include ../blocks/menu
+include ../blocks/forms
+
+doctype html
+html(lang="ru-RU")
+	head
+		+meta()
+
+	body
+		include ../blocks/preloader
+		
+		.wrapper.wrapper-IE.content
+			
+			.Background#waterGL
+				canvas.Background-canvas
+
+			.content.centerd
+
+				span.authorize.authorize_top#authorize(data-flip-id="login") Авторизоваться
+
+				main
+					.flip
+						.flip__el#login
+							+formIndex("flip__front")
+							+formLogin("flip__back")
+
+			footer.footer
+				.footer__copyright © Елена Куклина | Создано с любовью в LoftSchool | 2017
+
+		script(src="/assets/js/water.js" defer)

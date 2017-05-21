@@ -1,0 +1,4 @@
+mixin skill(percent)
+	svg.circles(viewbox="0 0 110 110")
+		circle(class="circle__first" r="45", cx="50%", cy="50%", fill="none")
+		circle(class=`circle__second circle-${percent}` r="45", cx="50%", cy="50%", transform="rotate(-90 55 55)")

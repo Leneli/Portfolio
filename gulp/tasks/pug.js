@@ -1,4 +1,4 @@
-'use strict';
+/*'use strict';
 
 const fs = require('fs');
 
@@ -18,4 +18,4 @@ module.exports = function() {
        }))
       .pipe($.gulp.dest($.config.root));
   });
-};
+};*/
