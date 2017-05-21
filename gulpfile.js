@@ -53,3 +53,20 @@ $.gulp.task("default", $.gulp.series(
 		"serve"
 	)
 ));
+
+$.gulp.task("build", $.gulp.series(
+	"clean",
+	$.gulp.parallel(
+		"sass",
+		"js:foundation",
+		"js:process",
+		"js:private",
+		"copy:image",
+		"copy:fonts",
+		"copy:json",
+		"css:foundation",
+		"create:version",
+		"sprite:svg",
+		"sprite:png"
+	)
+));
