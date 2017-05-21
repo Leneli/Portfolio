@@ -28,20 +28,21 @@ router.get("/", isAdmin, function (req, res) {
 	res.render("pages/admin", obj);
 });
 
-//Загрузить картинку
+//Загрузить работу в слайдер
 router.post("/upload", isAdmin, function (req, res) {
 	let form = new formidable.IncomingForm();
 	form.uploadDir = path.join(process.cwd(), config.upload);
 	form.parse(req, function (err, fields, files) {
 		if (err) {
-			return res.json({ status: "Не удалось загрузить картинку" });
+			return res.json({ status: "Не удалось загрузить скриншот" });
 		}
-		if (!fields.name) {
+		if (!fields.name || !fields.tech) {
 			fs.unlink(files.photo.path);
-			return res.json({ status: "Не указано описание картинки!" });
+			return res.json({ status: "Не указано описание работы!" });
 		}
+		
 		//если ошибок нет, то создаем новую picture и передаем в нее поле из формы
-		const Model = mongoose.model("pic");
+		const Model = mongoose.model("work");
 
 		fs.rename(files.photo.path, path.join(config.upload, files.photo.name), function (err) {
 			if (err) {
@@ -53,11 +54,16 @@ router.post("/upload", isAdmin, function (req, res) {
 				.upload
 				.substr(config.upload.indexOf("/"));
 
-			const item = new Model({name: fields.name, picture: path.join(dir, files.photo.name)});
+			const item = new Model({
+					name: fields.name, 
+					tech: fields.tech,
+					link: fields.link,
+					picture: path.join(dir, files.photo.name)
+				});
 			item
 				.save()
 				.then(
-					i => res.json({status: "Картинка успешно загружена"}),
+					i => res.json({status: "Работа успешно добавлена"}),
 					e => res.json({status: e.message})
 				);
 		});

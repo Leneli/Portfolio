@@ -13,7 +13,7 @@ mixin button(arowDirection, btnClass)
 	.slider__desc
 		h2.subtitle.work__title#header
 		span.work__tech#description
-		a(href="#").work__link#siteLink Просмотреть сайт
+		a(href="" target="_blank").work__link#siteLink Просмотреть сайт
 
 	.slider__nav
 		.slider__btn#btnPrew
@@ -26,3 +26,9 @@ mixin button(arowDirection, btnClass)
 			img#btnNextImg(src="" alt="" data-index="")
 			.slider__btn_top.next
 				+arrow("#", "svg_white")(class="arrow_up arrow_slider" onclick="event.preventDefault()")
+
+
+	//-данные для слайдера
+	ul.slider__data
+		each i in slides
+			li(data-url=`${i.picture}` data-name=`${i.name}` data-tech=`${i.tech}` data-link=`${i.link}`)

@@ -36,7 +36,7 @@ mongoose.connect("mongodb://root:iZ6CUI3B@ds151049.mlab.com:51049/portfolio");
 require("./models/db-close");
 //подключаем модели(сущности, описывающие коллекции базы данных)
 require("./models/blog");
-require("./models/pic");
+require("./models/work");
 require("./models/user");
 
 //подключение движка
