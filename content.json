@@ -20,10 +20,6 @@
             "value": "10"
         },
         {
-            "name": "mySQL",
-            "value": "15"
-        },
-        {
             "name": "Node.js & npm",
             "value": "35"
         },
@@ -43,8 +39,8 @@
             "value": "80"
         },
         {
-            "name": "Bower",
-            "value": "90"
+            "name": "Webpack",
+            "value": "40"
         }
     ],
     
