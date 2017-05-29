@@ -23,7 +23,13 @@ const uploadDir = path.join(__dirname, config.upload);
 //подключаем базу данных
 mongoose.Promise = global.Promise;
 mongoose.connect("mongodb://root:iZ6CUI3B@ds151049.mlab.com:51049/portfolio");
-/*mongoose
+/*
+var options = {
+  server: { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 } },
+  replset: { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 } }
+};
+//mongoose.connect(secrets.db, options);
+mongoose
 	.connect(`mongodb://${config.db.host}:${config.db.port}/${config.db.name}`, {
 		user: config.db.user,
 		pass: config.db.password
@@ -84,6 +90,7 @@ app.use(function (err, req, res, next) {
 	res.render("500");
 });
 
+//server.listen(3000, "localhost");
 server.listen(80, "0.0.0.0");
 server.on("listening", function () {
 	jsonfile
